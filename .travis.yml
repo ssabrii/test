@@ -1,12 +1,7 @@
 language: node_js
-node_js: "7"
+node_js: '7'
 
-
-deploy:
-  provider: s3
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_ACCESS_KEY
-  bucket: portfolio-tim
-  acl: public_read
-  region: us-east-1
-
+notifications:
+  slack:
+    room:
+      secure: oNQV/gxTgTiUL0mUuVckn0teCzQPqfP0H3ZEemdIVGKzzILjCeomVY2m8Sk50xj9IVDtqcAfTGq3p93hmjQkV7/SVfuZ4mVInyrRqxvn7V167ED5SRpfo8lJ6tU1JauG7BgVtzhaNrOPDqk6mJ5jrNkcOQYfR4h5uidc8mtfilYL1rHLkwHzrMsqKKd1Lc3Bl5JTCqtNDiFPFECBJc8IxW8YnJMWGUn6QVoa2itsPYODMi/otc4smyNJ0wClK+LT/KIziiY+F7lFF7twYO4zQTGqnNFCOszpof76rCb9ZQO6fqKl4pJ0KmLOavUoRgQislVHf6OoN9J9BACLInuO14+ivc8MzHzmKYkMRWX3Gh9TrK9XCwh3FDzjb8RAUH36QODVCBTEOInh5hdKjCy0Y1VqkW+/lUdL2meGzlOhuOcM8E6/jx41ZQoeqHUbeVJDi9eF+0SJokBM1HuLEIMf7OGrWeJ6GN4CloUbsrw1sPjYqc72VWDNvDsTIpGfg2Wa3b3Gd1NnnECSm36yPLhs4GQYL052sYcceDI1Fo4ofucvxKEixjSOQldOXTLjnz71fNTaRogC6L2hxT4f/0++Bk8tr75PRniTV0vXqbLImN27yMp8cio9F0p4yVhrDe5c9H38SLIvOROzc1ZrOApigcgo/q8/+leQQB0h+z5je+U=
