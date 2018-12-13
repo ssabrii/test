@@ -1,8 +1,11 @@
-language: ruby
-rvm:
-- 2.2
-- jruby
+language: node_js
 
-before_install:
-  - openssl aes-256-cbc -K $encrypted_80c5dbc0d42c_key -iv $encrypted_80c5dbc0d42c_iv -in encrypt-me.txt.enc -out encrypt-me.txt -d
-  - less encrypt-me.txt
+
+deploy:
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: portfolio-tim
+  acl: public_read
+  region: us-east-1
+
