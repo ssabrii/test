@@ -9,12 +9,12 @@ cache:
   directories:
   - node_modules/
   - vendor/bundle/
-  - "$HOME/.nvm/versions/"
-  - "$HOME/.gradle/caches/"
-  - "$HOME/.gradle/wrapper/"
-  - "$HOME/.android/build-cache/"
-  - "$HOME/.npm"
-  - "$HOME/.cache"
+  - $HOME/.nvm/versions/
+  - $HOME/.gradle/caches/
+  - $HOME/.gradle/wrapper/
+  - $HOME/.android/build-cache/
+  - $HOME/.npm
+  - $HOME/.cache
 after_script:
 #  - make code-coverage
 matrix:
