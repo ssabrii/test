@@ -1,7 +1,7 @@
 branches:
   only:
   - master
-install: true
+
 
 cache:
   bundler: true
