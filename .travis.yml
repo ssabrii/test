@@ -1,7 +1,7 @@
 branches:
   only:
   - master
-
+script: skip
 cache:
   bundler: true
   cocoapods: true
