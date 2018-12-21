@@ -1,7 +1,7 @@
 branches:
   only:
   - master
-script: npm test
+script: true
 cache:
   bundler: true
   cocoapods: true
