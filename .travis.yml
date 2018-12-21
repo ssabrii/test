@@ -1,8 +1,51 @@
-language: node_js
-node_js: '7'
+branches:
+  only:
+  - master
+
+cache:
+  bundler: true
+  cocoapods: true
+  yarn: true
+  directories:
+  - node_modules/
+  - vendor/bundle/
+  - "$HOME/.nvm/versions/"
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
+  - "$HOME/.android/build-cache/"
+  - "$HOME/.npm"
+  - "$HOME/.cache"
+before_install:
+  - nvm install && nvm use
+  - make setup-travis-environment
+install:
+  - make mobile_install
+after_script:
+#  - make code-coverage
+matrix:
+  include:
+  - os: linux
+    language: android
+    jdk: oraclejdk8
+    android:
+      components:
+      - build-tools-27.0.3
+      - android-27
+    script:
+    # - make mobile_ci-check
+    # - make mobile_build-android
+  - os: osx
+    osx_image: xcode9.3
+    podfile: ios/Podfile
+    script:
+    # - make mobile_ci-check
+    # - make mobile_build-ios
 notifications:
   slack:
     secure: CQCTN/ioYpkHsbksfXrjY90TcPIWBM2L+FVbcezhNEZMC1wxo15r9uRsApzMm4xpr3J/ZzKj8ctPcPio6ObH8IiPnahbaYNbxWX1Qj2oSH6Zvvkd4EhDo+4MlCsCaRDF8nlS1dogV1gxX/doq2Dzg+fXXKrfQoCXU4Jq+0Oo7yguf4NkqsbcKI+jCz7WD9n9wNE/fReHyW2qogOTmIJofeXWrOkmIZCu9ZECsImKbnWUrt5XWE1ev8RGXicf7PvX9L2AQPbKilBw2tjPu2QeFBw9nn9Hjw5c1LJ0Am7kwlrg8/1WM0nZN6sYf53HqGBJchP6wo6/pXoq080R/6LakFKI6iZqqO51pBSshocsLqBEzyW7rv7ukMhf/qe7IsAFvwQaSOwXTt5PGsig+ILjiSJOkuaAOtwVrl8fQPyi1cy1JYJ7lbwJWXUIGzF5L7TQxemkqxx0QyR4bm7/k2x0U+ve76xALslFakDyPZzJ0Q3um+SRVoS7bkrWRfYh5p5GQUg3rTMwONpYwnORpUnUDqXYLX7gRr9xV6y14TBLJB59v5fCcUK+5A3ZvjxGu3eySs2d0xz7brjWcDprAplDdIfSr8biopJm1fiF08Z6D9RNP9UYH8cQpD2svjR6h/OlArWCjqw9GqRTA3wElid026HRDFRX+Je2UZarQdULgYQ=
-env:
-  matrix:
-    secure: Xlt+YqRUM8ZZfH+bKkmSlVzEnnk1HlJ/9XTQT6fFoUqEvQVmef/sQkv61Dc51dWHhq273QzHYowokJW1TNHeAOs3BrrZkdwD/53zaVT8yUFWWBO41ImylwNKa31RJcLWKPz3Owe8/PUY1Nrtx9+BGnxHwYfZ83D1XdI8MkBb50tcuIp+4N9Rb8RAufCMHwBEY0FlydkrubnFL8ZS60QKPyBc5sn9P1sDQCtWmVekINo/NXYCxcGe56LQQKWGczGWsvRM/t8b4VqMO5zQ8TdvZVTNZqCF1sS0gfbA4tkXdE50IU5PonHe56y2BL3xmkzqxjKLNtP2JvUFMJgGAEOmzQPqkJQUKAQ7z7gEyggd8c009zEAXnYxB35co/Cd7ypeAKxRIkKVNNzXGT1HZatn7kRRbE044motUhbGyaspykU9Y35THf21tNUpXX68nlYtH9Z4/LCK5f/gKPr9bG2s5kE1oMgYBCNMLnTzlBzi+8Ku+m+th3GgYvpPOu21VaKhn54dU0EudYKxoYPSjU9FABT+Ny0SYucGo3zHY873riRRvaq+ttig/x1AO9n401JIRfkvn2ttnyGZJ8W+vEeV5WqO6wwbGkH1YkOLjVMCl7SiQAsejDdUW1ptTNk06pazdv4pY/azq+vXu0Awvs4yLAgwdcZghv2M3F86q56cSo4=
+
+addon:
+	sonarcloud:
+		organization: "ssabrii-github"
+		token:
+			secure: "eOQwRJgL5GBQTCYLnY5gEKLTyWMH/jBwxAmfrXf/tMDunsILLW2eP3w0TCIAMPZHSmGlZCG1jAHrlp0fiD4jNG3oxILqxA3y8+999Us/CPEKfGeCf6DknXo6jCz8kI0yRavL7S1bGiEMGQUFkPFX0N5JsdB1IkrJBQJd9BxVh1QR7VztiWWG7RJ9Yu5o9ihnMiKPtuqflPA+sr7I1RKHxwJiS7+uDUjwxkqKy3zSjg0xArOOKqFt2RruPoYHvTJ0VV1nG64FkzBX8DTNtXGY35RmueXPR7D/KY76YhxKq3M5RZbS+v9pJvlJ79EEk41o05e/NX10HPlVIaF7+Ohu7raxhTdjNQLUzTyAYmBoDwH1Tf2QMuMyTx9mlqITKo9nZM+zlbHfGqY7kKXT1eKWu3GcBZu3rPSf/jXi8ggOFFfYLOz4U2GaIrMN3E6VhAwPW4QlJ97SuKICMDWGjh0c2GHwz0GVAXtdw1esY9os4iDWp9MuI76P8VDbtdu2ExgJzr4THPQ8xKTwGyGYMgTFdfqZ2r1TXjwTBG5GLct/5G0i2MVBNHx/UCGojxZ25bs4yj0qnWT3Jqj+korZtcYAmLGFwF6izY7WHuI23i0fnYGNCulCLGe+dKIMDJjB0/zsAWj8XUfHS7sFjiu/frHlqQhkjseKjpTgmrALJ/truKY="
