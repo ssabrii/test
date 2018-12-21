@@ -1,7 +1,7 @@
 branches:
   only:
   - master
-install: ant deps
+
 cache:
   bundler: true
   cocoapods: true
