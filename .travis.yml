@@ -1,7 +1,6 @@
 branches:
   only:
   - master
-
 cache:
   bundler: true
   cocoapods: true
@@ -16,12 +15,11 @@ cache:
   - "$HOME/.npm"
   - "$HOME/.cache"
 before_install:
-  - nvm install && nvm use
-  - make setup-travis-environment
+- nvm install && nvm use
+- make setup-travis-environment
 install:
-  - make mobile_install
-after_script:
-#  - make code-coverage
+- make mobile_install
+after_script: 
 matrix:
   include:
   - os: linux
@@ -31,21 +29,23 @@ matrix:
       components:
       - build-tools-27.0.3
       - android-27
-    script:
-    # - make mobile_ci-check
-    # - make mobile_build-android
+    script: 
   - os: osx
     osx_image: xcode9.3
     podfile: ios/Podfile
-    script:
-    # - make mobile_ci-check
-    # - make mobile_build-ios
+    script: 
 notifications:
   slack:
     secure: CQCTN/ioYpkHsbksfXrjY90TcPIWBM2L+FVbcezhNEZMC1wxo15r9uRsApzMm4xpr3J/ZzKj8ctPcPio6ObH8IiPnahbaYNbxWX1Qj2oSH6Zvvkd4EhDo+4MlCsCaRDF8nlS1dogV1gxX/doq2Dzg+fXXKrfQoCXU4Jq+0Oo7yguf4NkqsbcKI+jCz7WD9n9wNE/fReHyW2qogOTmIJofeXWrOkmIZCu9ZECsImKbnWUrt5XWE1ev8RGXicf7PvX9L2AQPbKilBw2tjPu2QeFBw9nn9Hjw5c1LJ0Am7kwlrg8/1WM0nZN6sYf53HqGBJchP6wo6/pXoq080R/6LakFKI6iZqqO51pBSshocsLqBEzyW7rv7ukMhf/qe7IsAFvwQaSOwXTt5PGsig+ILjiSJOkuaAOtwVrl8fQPyi1cy1JYJ7lbwJWXUIGzF5L7TQxemkqxx0QyR4bm7/k2x0U+ve76xALslFakDyPZzJ0Q3um+SRVoS7bkrWRfYh5p5GQUg3rTMwONpYwnORpUnUDqXYLX7gRr9xV6y14TBLJB59v5fCcUK+5A3ZvjxGu3eySs2d0xz7brjWcDprAplDdIfSr8biopJm1fiF08Z6D9RNP9UYH8cQpD2svjR6h/OlArWCjqw9GqRTA3wElid026HRDFRX+Je2UZarQdULgYQ=
-
 addon:
- sonarcloud:
-  organization: "ssabrii-github"
-  token:
-   secure: "eOQwRJgL5GBQTCYLnY5gEKLTyWMH/jBwxAmfrXf/tMDunsILLW2eP3w0TCIAMPZHSmGlZCG1jAHrlp0fiD4jNG3oxILqxA3y8+999Us/CPEKfGeCf6DknXo6jCz8kI0yRavL7S1bGiEMGQUFkPFX0N5JsdB1IkrJBQJd9BxVh1QR7VztiWWG7RJ9Yu5o9ihnMiKPtuqflPA+sr7I1RKHxwJiS7+uDUjwxkqKy3zSjg0xArOOKqFt2RruPoYHvTJ0VV1nG64FkzBX8DTNtXGY35RmueXPR7D/KY76YhxKq3M5RZbS+v9pJvlJ79EEk41o05e/NX10HPlVIaF7+Ohu7raxhTdjNQLUzTyAYmBoDwH1Tf2QMuMyTx9mlqITKo9nZM+zlbHfGqY7kKXT1eKWu3GcBZu3rPSf/jXi8ggOFFfYLOz4U2GaIrMN3E6VhAwPW4QlJ97SuKICMDWGjh0c2GHwz0GVAXtdw1esY9os4iDWp9MuI76P8VDbtdu2ExgJzr4THPQ8xKTwGyGYMgTFdfqZ2r1TXjwTBG5GLct/5G0i2MVBNHx/UCGojxZ25bs4yj0qnWT3Jqj+korZtcYAmLGFwF6izY7WHuI23i0fnYGNCulCLGe+dKIMDJjB0/zsAWj8XUfHS7sFjiu/frHlqQhkjseKjpTgmrALJ/truKY="
+  sonarcloud:
+    organization: ssabrii-github
+    token:
+      secure: eOQwRJgL5GBQTCYLnY5gEKLTyWMH/jBwxAmfrXf/tMDunsILLW2eP3w0TCIAMPZHSmGlZCG1jAHrlp0fiD4jNG3oxILqxA3y8+999Us/CPEKfGeCf6DknXo6jCz8kI0yRavL7S1bGiEMGQUFkPFX0N5JsdB1IkrJBQJd9BxVh1QR7VztiWWG7RJ9Yu5o9ihnMiKPtuqflPA+sr7I1RKHxwJiS7+uDUjwxkqKy3zSjg0xArOOKqFt2RruPoYHvTJ0VV1nG64FkzBX8DTNtXGY35RmueXPR7D/KY76YhxKq3M5RZbS+v9pJvlJ79EEk41o05e/NX10HPlVIaF7+Ohu7raxhTdjNQLUzTyAYmBoDwH1Tf2QMuMyTx9mlqITKo9nZM+zlbHfGqY7kKXT1eKWu3GcBZu3rPSf/jXi8ggOFFfYLOz4U2GaIrMN3E6VhAwPW4QlJ97SuKICMDWGjh0c2GHwz0GVAXtdw1esY9os4iDWp9MuI76P8VDbtdu2ExgJzr4THPQ8xKTwGyGYMgTFdfqZ2r1TXjwTBG5GLct/5G0i2MVBNHx/UCGojxZ25bs4yj0qnWT3Jqj+korZtcYAmLGFwF6izY7WHuI23i0fnYGNCulCLGe+dKIMDJjB0/zsAWj8XUfHS7sFjiu/frHlqQhkjseKjpTgmrALJ/truKY=
+deploy:
+  provider: releases
+  api_key:
+    secure: Qu3AHqmVtyAtYTM6MVQvW3+sJ28nZvIiJYd058WxMkQiCg6FTuhBzqLlKNLcASGUS/++d7wy6ti90bp+9Q0QDlIIBX5+lgniPa/jMYSrszONGau2sCHwNCdPWP0MjnP1z47rsHvu5ZjP8MXWOngZGOeVKyBxSRPV5qAKEBdbrJhM4zc0gzkLBhIUcStAi6H+OvpT3wLzfrCFNsnQQ/CpzIgbxSs8YGI4++ZkSJzOJKAiCASAW02T8R4I0qybHycos6NXHO38ddYxYKtVsD08m7vKh1+HTbs2yD6KxNeRss/vKwpDYPDZ8HU945mEqAtOE9fZIx9qUsaLztDdF4ga4j38792403FHkPJ8RL8J8r+BbcV6kgtgwRhElOwlc1Hw6YfXhDr7yeUfwPTUOo/GM4f3usNMs3QqgX+bYoEq+EFss09D+B+xl+WceRIe4G91+s8vY8s/XzGv+cxeEAl+9/axwT98hyIwXtWU1XIdZg+SI5wJ7MnhcTKIuMnpqvxAMB8lFZzeO0UMemyvgFB9TyPmbm2Y/+kNOH/Cb53i2KMjq4HtWEdVKeiQ0fpPqyFvMO8bKgzrxYveKR3O+eFJ8vTMNl4c2dD3bU8Vs4OKtkeR8XtqvxWZSce+n/NO++YS6hbUY2mtUwuVgZ1WymS6MgIFaACG7Mct0mXrquFYxh8=
+  file: "~/Desktop/Screen Shot 2018-12-10 at 5.00.00 PM.png"
+  on:
+    repo: ssabrii/test
