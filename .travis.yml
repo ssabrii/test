@@ -1,37 +1,4 @@
-
-cache:
-  bundler: true
-  cocoapods: true
-  yarn: true
-  directories:
-  - node_modules/
-  - vendor/bundle/
-  - "$HOME/.nvm/versions/"
-  - "$HOME/.gradle/caches/"
-  - "$HOME/.gradle/wrapper/"
-  - "$HOME/.android/build-cache/"
-  - "$HOME/.npm"
-  - "$HOME/.cache"
-before_install:
-- nvm install && nvm use
-- make setup-travis-environment
-install:
-- make mobile_install
-
-matrix:
-  include:
-  - os: linux
-    language: android
-    jdk: oraclejdk8
-    android:
-      components:
-      - build-tools-28.0.3
-      - android-27
-    script: 
-  - os: osx
-    osx_image: xcode9.3
-    podfile: ios/Podfile
-    script: 
+script: echo 'hello world'
 notifications:
   slack:
     secure: CQCTN/ioYpkHsbksfXrjY90TcPIWBM2L+FVbcezhNEZMC1wxo15r9uRsApzMm4xpr3J/ZzKj8ctPcPio6ObH8IiPnahbaYNbxWX1Qj2oSH6Zvvkd4EhDo+4MlCsCaRDF8nlS1dogV1gxX/doq2Dzg+fXXKrfQoCXU4Jq+0Oo7yguf4NkqsbcKI+jCz7WD9n9wNE/fReHyW2qogOTmIJofeXWrOkmIZCu9ZECsImKbnWUrt5XWE1ev8RGXicf7PvX9L2AQPbKilBw2tjPu2QeFBw9nn9Hjw5c1LJ0Am7kwlrg8/1WM0nZN6sYf53HqGBJchP6wo6/pXoq080R/6LakFKI6iZqqO51pBSshocsLqBEzyW7rv7ukMhf/qe7IsAFvwQaSOwXTt5PGsig+ILjiSJOkuaAOtwVrl8fQPyi1cy1JYJ7lbwJWXUIGzF5L7TQxemkqxx0QyR4bm7/k2x0U+ve76xALslFakDyPZzJ0Q3um+SRVoS7bkrWRfYh5p5GQUg3rTMwONpYwnORpUnUDqXYLX7gRr9xV6y14TBLJB59v5fCcUK+5A3ZvjxGu3eySs2d0xz7brjWcDprAplDdIfSr8biopJm1fiF08Z6D9RNP9UYH8cQpD2svjR6h/OlArWCjqw9GqRTA3wElid026HRDFRX+Je2UZarQdULgYQ=
