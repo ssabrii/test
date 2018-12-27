@@ -3,17 +3,14 @@ language: bash
 matrix:
   include:
     - rust: 'stable'
-      os:
-        - linux
-        - osx
+      os: linux
+      os: osx
     - jdk: 'oraclejdk'
-      os:
-        - linux
-        - osx
+      os: linux
+      os: osx
     - node_js: 'node'
-      os:
-        - linux
-        - osx
+      os: linux
+      os: osx
 
 
 notifications:
