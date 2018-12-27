@@ -1,14 +1,20 @@
 language: bash
 
-os: linux
 
 matrix:
   include:
-    - stage:
+    - os: linux
       rust: 'stable'
+    - os: linux
       jdk: 'oraclejdk'
+    - os : linux  
       node_js: 'node'
-      os: osx
+    - os: osx
+      rust: 'stable'
+    - os: osx
+      jdk: 'oraclejdk'
+    - os : osx  
+      node_js: 'node'
 
 
 
