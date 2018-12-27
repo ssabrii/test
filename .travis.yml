@@ -16,3 +16,6 @@ deploy:
     repo: ssabrii/test
   skip_cleanup: true
   draft: true
+before_install:
+- openssl aes-256-cbc -K $encrypted_80c5dbc0d42c_key -iv $encrypted_80c5dbc0d42c_iv
+  -in secret.txt.enc -out secret.txt -d
