@@ -5,6 +5,7 @@ before_install:
   - sudo gem install bundler
 before_script:
   - bundle update
+  - curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
 cache: bundler
 env:
   global:
