@@ -1,32 +1,7 @@
-language: ruby
-dist: trusty
-before_install:
-  - gem update --system
-  - gem install bundler
-before_script:
-  - bundle update
-cache: bundler
-env:
-  global:
-    - TESTOPTS=--verbose
-rvm:
-  - 1.9.3-p551
-  - 2.0.0-p648
-  - 2.1.10
-  - 2.2.10
-  - 2.3.8
-  - 2.4.5
-  - 2.5.3
-  - ruby-head
-  - jruby-1.7.27
-  - jruby-9.1.17.0
-  - jruby-9.2.3.0
-  - jruby-head
-  - rbx-3.107
-  - truffleruby-1.0.0-rc10
-matrix:
-  allow_failures:
-    - rvm: ruby-head
-    - rvm: jruby-head
-    - rvm: truffleruby-1.0.0-rc10
+language: python
+python: 3.6
+addons:
+  - postgresql: 11.1
+before_script: sudo psql -c \"CREATE DATABASE gctftest WITH OWNER \"postgres\" ENCODING \"UTF8\" LC_COLLATE=\"en_US.UTF-8\" LC_CTYPE=\"en_US.UTF-8\" TEMPLATE template0;\" -U postgres"
+script: skip
 
