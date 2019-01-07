@@ -1,9 +1,9 @@
 language: bash
 branches:
   only:
-    - "/^env\/[^\/]+$/"
+    - '/^env\/[^\/]+$/'
     - /^.+-env$/
-    - /^v(\\d+)\\.(\\d+)\\.(\\d+)$/
+
 
 matrix:
   include:
