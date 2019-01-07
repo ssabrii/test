@@ -3,7 +3,7 @@ branches:
   only:
     - '/^env\/[^\/]+$/'
     - /^.+-env$/
-
+    - '/^v(\\d+)\\.(\\d+)\\.(\\d+)$/'
 
 matrix:
   include:
