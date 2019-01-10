@@ -1,7 +1,7 @@
 language: bash
 branches:
   only:
-    - /^(env\/[^\/].+$)/
+    - /^(env\/[^\/]+$)/
 
 matrix:
   include:
