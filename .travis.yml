@@ -1,16 +1,15 @@
 language: bash
 
 
-matrix:
-  include:
-    - os: linux
-      rust: 'stable'
-      jdk: 'oraclejdk'
-      node_js: 'node'
-    - os: osx
-      rust: 'stable'
-      jdk: 'oraclejdk'
-      node_js: 'node'
+addons:
+  postgresql: "11.0"
+  apt:
+    packages:
+    - postgresql-10
+    - postgresql-client-10
+env:
+  global:
+  - PGPORT=5433
 
 
 
