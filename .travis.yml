@@ -2,4 +2,7 @@ dist: xenial
 language: java 
 jdk: 
   - openjdk11 
-script: skip
+script:
+  - sudo add-apt-repository ppa:openjdk-r/ppa -y
+  - sudo apt-get update -q
+  - sudo apt install -y openjdk-11-jdk
