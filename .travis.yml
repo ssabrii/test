@@ -2,5 +2,5 @@ language: ruby
 rvm: 2.3.6
 cache: bundler
 before_script:
- - export TRAVIS_COMMIT_MESSAGE=`git log --oneline -n 1`
+ - export TRAVIS_COMMIT_MESSAGE= "Hello"
 script: echo $TRAVIS_COMMIT_MESSAGE
