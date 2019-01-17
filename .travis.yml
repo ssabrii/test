@@ -2,4 +2,4 @@ dist: xenial
 language: java 
 jdk: openjdk11 
 script: 
-- true
+- $TRAVIS_BUILD_DIR/install-jdk.sh --install openjdk11 --target $JAVA_HOME
