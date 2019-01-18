@@ -1,11 +1,7 @@
-language: node_js
+language: objective-c
+osx_image: xcode9.2
+rvm: 2.1.2
+before_install:
+- rvm get stable
 
-
-deploy:
-  provider: s3
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_ACCESS_KEY
-  bucket: portfolio-tim
-  acl: public_read
-  region: us-east-1
 
