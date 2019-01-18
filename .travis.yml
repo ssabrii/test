@@ -1,5 +1,4 @@
 language: bash
-dist: xenial
 
 script: cat /proc/sys/fs/inotify/max_user_watches
 
