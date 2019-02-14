@@ -1,8 +1,6 @@
 language: ruby
 dist: xenial
 
-services:
- - mysql
  
-script: skip
+script: sudo systemctl start mysql
 
