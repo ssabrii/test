@@ -1,8 +1,9 @@
 language: ruby
 dist: xenial
 
-services: [mysql]
+services:
+ - mysql
  
 script:
- - dpkg -l | grep mysql
+ - sudo systemctl start mysql
 
