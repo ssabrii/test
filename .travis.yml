@@ -1,8 +1,8 @@
-language: python
-python: '3.6.5'
+language: ruby
+dist: xenial
 
-before_install: 
- - pip uninstall numpy -y
- - pip install numpy
-
+services:
+ - mysql
+ 
 script: skip
+
