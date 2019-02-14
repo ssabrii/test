@@ -2,5 +2,6 @@ language: ruby
 dist: xenial
 
  
-script: sudo systemctl start mysql
+script:
+ - dpkg -l | grep mysql
 
