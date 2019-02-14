@@ -1,6 +1,7 @@
 language: ruby
 dist: xenial
 
+services: [mysql]
  
 script:
  - dpkg -l | grep mysql
