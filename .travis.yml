@@ -5,5 +5,5 @@ services:
  - mysql
  
 script:
- - sudo cat /var/log/mysql.log
+ - sudo cat /var/lib/mysql/mysqld.log
 
