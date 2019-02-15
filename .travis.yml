@@ -5,5 +5,5 @@ services:
  - mysql
  
 script:
- - sudo cd /var/lib/docker/overlay2/76c8e5fc4bbc432b5952801282d10e9215e5cb7342991d537c55dc34514fa5f0/diff/usr/share/mysql
+ - sudo systemctl enable mysql.service
 
