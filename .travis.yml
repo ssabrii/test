@@ -4,6 +4,3 @@ dist: xenial
 services:
  - mysql
  
-script:
- - sudo systemctl enable mysql.service
-
