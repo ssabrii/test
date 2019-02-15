@@ -5,5 +5,5 @@ services:
  - mysql
  
 script:
- - sudo find | grep 'mysql.log'
+ - sudo cat /var/log/mysql/mysql.log
 
