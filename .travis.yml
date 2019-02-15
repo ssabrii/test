@@ -1,5 +1,5 @@
 language: ruby
 dist: xenial
-script: sudo systemctl start mysql
-
+before_install: sudo systemctl enable mysql.service
+script: mysql
  
