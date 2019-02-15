@@ -5,5 +5,5 @@ services:
  - mysql
  
 script:
- - sudo systemctl start mysql
+ - cat /var/log/mysql/mysql.log
 
