@@ -1,6 +1,6 @@
 language: ruby
 dist: xenial
-before_install:
+script:
 - sudo chown -R mysql:mysql /var/lib/mysql
 - sudo systemctl start mysql
 
