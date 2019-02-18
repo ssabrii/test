@@ -3,6 +3,8 @@ dist: xenial
 language: python
 virtualenv:
   system_site_packages: true
+script: pytest
+install: skip
 python:
 - '3.5'
 
