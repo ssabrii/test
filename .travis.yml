@@ -1,6 +1,7 @@
 language: ruby
 dist: xenial
 script:
+- chown -R mysql:mysql /var/lib/mysql /var/run/mysqld
 - sudo systemctl restart mysql.service
 - sudo tail -60 /var/log/mysql/error.log
 
