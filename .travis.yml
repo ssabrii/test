@@ -10,7 +10,7 @@ python:
 jobs:
   include:
     - name: test
-      branch in master
+      if: branch IN test
       install:
       - pip install -r requirements.txt
       # command to run tests
