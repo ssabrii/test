@@ -2,6 +2,6 @@ language: ruby
 dist: xenial
 script:
 - sudo systemctl restart mysql.service
-- sudo tail -30 /var/log/mysql/error.log
+- sudo tail -60 /var/log/mysql/error.log
 
  
