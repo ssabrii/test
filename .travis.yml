@@ -1,6 +1,10 @@
-language: php
+sudo: required
 dist: xenial
-script: php --version
+language: python
+virtualenv:
+  system_site_packages: true
+python:
+- '3.5'
 
 
  
