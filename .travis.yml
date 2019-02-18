@@ -1,8 +1,6 @@
-language: ruby
+language: php
 dist: xenial
-script:
-- sudo chown -R mysql:mysql /var/lib/mysql
-- sudo systemctl start mysql
+script: php --version
 
 
  
