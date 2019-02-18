@@ -2,8 +2,7 @@ language: ruby
 dist: xenial
 before_install:
 - sudo chown -R mysql:mysql /var/lib/mysql
-- sudo systemctl restart mysql.service
-services: mysql
+- sudo systemctl start mysql
 
 
  
