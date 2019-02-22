@@ -1,5 +1,6 @@
 os: osx
 language: swift
+dist: trusty
 osx_image: 10.1
 script: skip
 
@@ -7,6 +8,6 @@ before_deploy: set -x
 
 deploy:
   - script: false
-  - provider: script
-  - skip_cleanup: true
+    provider: script
+    skip_cleanup: true
 
