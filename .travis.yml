@@ -1,11 +1,13 @@
-sudo: required
-dist: xenial
-language: python
-virtualenv:
-  system_site_packages: true
-python:
-- '3.5'
-install: skip
+os: osx
+dist: trusty
+language: swift
+osx_image: 10.1
+script: skip
 
-script: ls -Ral | grep machine
+before_deploy: set -x
+
+deploy:
+  - script: false
+  - provider: script
+  - skip_cleanup: true
 
