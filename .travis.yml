@@ -1,7 +1,7 @@
 os: osx
 language: swift
 dist: trusty
-osx_image: 10.1
+osx_image: xcode10.1
 script: skip
 
 before_deploy: set -x
