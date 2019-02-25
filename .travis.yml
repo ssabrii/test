@@ -1,9 +1,5 @@
 language: ruby
-dist: precise
-
-before_install:
-- gem install bundler -v '< 2'
-- bundle _1.17.3_ install
-- bundler --version
-
+install: skip
+script: 
+ - download_path="aa/bb/cc/dd" && echo ${download_path##*/} && echo "can you see me?"
 
