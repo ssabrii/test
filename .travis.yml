@@ -1,5 +1,7 @@
 language: ruby
 install: skip
-script: 
- - download_path="aa/bb/cc/dd" && echo ${download_path##*/} && echo "can you see me?"
+dist: precise
+before_install: 
+ - rvm @global do gem uninstall bundler
+ - bundler --version
 
