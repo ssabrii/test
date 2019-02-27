@@ -1,3 +1,4 @@
 language: ruby
 script: skip
+os: osx
 osx_image: xcode8
