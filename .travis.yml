@@ -1,13 +1,5 @@
-os: osx
-language: swift
-dist: trusty
-osx_image: xcode10.1
-script: skip
-
-before_deploy: set -x
-
-deploy:
-  - script: false
-    provider: script
-    skip_cleanup: true
-
+language: python
+dist: xenial
+python:
+  - python3.6
+  - python3.7
