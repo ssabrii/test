@@ -1,5 +1,5 @@
 language: python
 dist: xenial
 python:
-  - python3.6
-  - python3.7
+  - 3.6
+  - 3.7
