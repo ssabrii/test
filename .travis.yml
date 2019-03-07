@@ -1,2 +1,9 @@
 dist: trusty
 script: curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+addons:
+ postgresql: 9.6
+ apt:
+  packages:
+   - oracle-java8-set-default
+
+ 
