@@ -1,7 +1,5 @@
-language: ruby
-install: skip
-dist: precise
-before_install: 
- - rvm @global do gem uninstall bundler
- - bundler --version
+language: node
+nodejs: '11.10.1'
+
+script: node --version
 
