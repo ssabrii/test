@@ -1,4 +1,4 @@
 os: windows
 language: c
 jdk: oraclejdk11
-script: skip
+script: java -version
