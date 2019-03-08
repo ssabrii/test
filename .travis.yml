@@ -1,4 +1,4 @@
 os: windows
-language: c
+language: shell
 jdk: oraclejdk11
 script: 'java -version'
