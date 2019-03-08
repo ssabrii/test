@@ -1,7 +1,7 @@
 os: windows
 language: c
 script:
- - "choco install jdk8 -params 'installdir=c:\\\\java8'"
- - "export PATH=$PATH:\"/c/java8/bin\""
- - "export JAVA_HOME=\"/c/java8\""
+ - choco install jdk8 -params 'installdir=c:\\\\java8'
+ - export PATH=$PATH:\"/c/java8/bin\"
+ - export JAVA_HOME=\"/c/java8\"
  - choco install maven
