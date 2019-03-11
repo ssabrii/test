@@ -6,6 +6,7 @@ before_script:
   - wget http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-${MONGODB_VERSION}.tgz -O /tmp/mongodb.tgz
   - tar -xvf /tmp/mongodb.tgz
   - mkdir /tmp/data
+  - export PATH=${PWD}/mongodb-linux-x86_64-${MONGODB_VERSION}/bin:$PATH
   - ${PWD}/mongodb-linux-x86_64-${MONGODB_VERSION}/bin/mongod --dbpath /tmp/data &> /dev/null &
   - ${PWD}/mongodb-linux-x86_64-${MONGODB_VERSION}/bin/mongo --version
 script: mongo --version
