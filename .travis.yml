@@ -1,12 +1,6 @@
+dist: xenial
+language: npm
+services: mongodb
+before_script: mongo --version
 
-language: objective-c
-osx_image: xcode10.1
-cache:
-  bundler: true
-  cocoapods: true
-  directories:
-    - $HOME/Library/Caches/Homebrew
-    - node_modules
-
-script: false
 
