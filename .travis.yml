@@ -7,7 +7,7 @@ before_script:
   - tar -xvf /tmp/mongodb.tgz
   - mkdir /tmp/data
   - ${PWD}/mongodb-linux-x86_64-${MONGODB_VERSION}/bin/mongod --dbpath /tmp/data &> /dev/null &
-  - ${PWD}/mongodb-linux-x86_64-${MONGODB_VERSION}/bin/mongod --version
+  - ${PWD}/mongodb-linux-x86_64-${MONGODB_VERSION}/bin/mongo --version
 script: mongo --version
 
 
