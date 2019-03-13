@@ -1,5 +1,5 @@
 dist: precise
 before_install:
- - sudo nvm install
- - sudo npm install -g npm-install-retry
- - sudo npm-install-retry
+ -  nvm install
+ -  npm install -g npm-install-retry
+ -  npm-install-retry
