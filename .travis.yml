@@ -5,7 +5,7 @@ install:
  - lsb_release -a
  - gm version
  - nvm install
- - nvm use '9'
+ - nvm use 9
  - npm install -g npm-install-retry
  - npm-install-retry
 
