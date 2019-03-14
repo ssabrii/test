@@ -1,6 +1,13 @@
 dist: precise
 language: ruby
-before_install:
+install:
  -  nvm install
+ -  npm install -g npm-install-retry
+ -  npm-install-retry
+
+before_install:
+ - sudo add-apt-repository -y ppa:rwky/graphicsmagick
+ - sudo apt-get update
+ - sudo apt-get install -y graphicsmagick ffmpegthumbnailer
 
 
