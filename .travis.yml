@@ -3,7 +3,6 @@ language: ruby
 install:
  - uname -a
  - lsb_release -a
- - gm version
  - nvm install
  - nvm use 9
  - npm install -g npm-install-retry
