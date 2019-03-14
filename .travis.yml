@@ -1,6 +1,6 @@
 dist: precise
+language: ruby
 before_install:
  -  nvm install
  -  npm install -g npm-install-retry
- -  sudo chown -R $USER:$GROUP ~/.npm
  -  npm-install-retry
