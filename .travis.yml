@@ -7,7 +7,6 @@ install:
  - nvm install
  - npm install -g npm-install-retry
  - npm-install-retry
- - sh -c 'cd webdav && npm install'
  - nvm install 9.9.0 && nvm use 9.9.0
  - npm install -g testcafe@0.19.1 testcafe-browser-provider-browserstack@1.2.0
  - nvm use 0.12.7
