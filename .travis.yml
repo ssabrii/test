@@ -1,9 +1,9 @@
-before_install: echo $TRAVIS_PULL_REQUEST_BRANCH
+before_install: echo TRAVIS_PULL_REQUEST_BRANCH
 
 jobs:
   include:
    - stage: 'hello'
      script: skip
    - stage: 'ok'
-     if: NOT $TRAVIS_PULL_REQUEST_BRANCH =~ /^(ssabrii-patch-1)/
+     if: NOT TRAVIS_PULL_REQUEST_BRANCH =~ /^ssabrii.+/
 language: ruby
