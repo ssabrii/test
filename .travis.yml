@@ -3,5 +3,5 @@ jobs:
    - stage: 'hello'
      script: skip
    - stage: 'ok'
-     if: NOT TRAVIS_PULL_REQUEST_BRANCH =~ /^(ssabrii)/
+     if: TRAVIS_PULL_REQUEST_BRANCH =~ /^(ssabrii)/
 language: ruby
