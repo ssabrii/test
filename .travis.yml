@@ -5,5 +5,5 @@ jobs:
    - stage: 'hello'
      script: skip
    - stage: 'ok'
-     if: NOT $TRAVIS_PULL_REQUEST_BRANCH =~ /^ssabrii.+/ OR branch = master
+     if: $TRAVIS_PULL_REQUEST_BRANCH =~ /^ssabrii.+/ AND type = push
 language: ruby
