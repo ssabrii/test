@@ -2,3 +2,5 @@ jobs:
   include:
    - stage: 'hello'
      script: skip
+   - stage: 'ok'
+language: ruby
