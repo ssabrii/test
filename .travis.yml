@@ -5,5 +5,5 @@ jobs:
    - stage: 'hello'
      script: skip
    - stage: 'ok'
-     if: NOT $TRAVIS_PULL_REQUEST_BRANCH =~ /^ssabrii.+/
+     if: NOT $TRAVIS_PULL_REQUEST_BRANCH =~ /^ssabrii.+/ OR branch = master
 language: ruby
