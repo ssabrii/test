@@ -1,9 +1,12 @@
-before_install:
- -  nvm install
- -  npm install -g npm-install-retry
- -  sudo chown -R $USER:$GROUP ~/.npm
- -  npm-install-retry
-env:
- global:
-  - secure: "FnVPMuuv9yUiCCw1xMW2WZ6izTuZsppLB4bjXBuvHd9ehknKCptDzjH9xzezJ1uu7mPyYS87Ng3WpbV1M6QXQP33fjtcPTpboxK6r6T+AQjG5xChWcMmMCZsnNf8xs2ANnfy8tec242NFR5QG4AGpg3mF5M/MiCh9vJ+V0Y1hlOlSAtahNrlxlIdYDZ9VMOzZdUbHLC+OdYJI5GCJFB1V2+owq4qT8uSNmgo46N2HBLfYtmhQqRzDyah5gpO6Itc4KDc7p36nfChVBgt1YKc/74s6anupGVCxiR1IrvMAwsFaC3IRcLZn/krLTW8C/EOCzfIEH2i8LWPOJyQE7foES5NnAeKy6gwxPlivBGLN4XsGG1SlyUB9m3pejtQ0XypJquDnToh4ct/2M59A8SiHw4UAxqnvPBG/raoswwR5nT1rdchxRcCaauGnSZXhEwf5tvupkwiSEmpb2iaTCSZ4O/3rT0Bok9Yr8+xdqB7Zm/Kd8c0MMc6xJSzNarPgd9qEDXriaEFJY9wKKqSBDxour19oD/Z0mard2i6qL+WD/06CEul3/VRV661BmQvh5BOdQgmH+CV9kPkfBgRno9eD6jmQjGq4MDrhkQ4WeORgUY5ehN+faD9D2RxpC2ykO6vpEvlKkfmTUa1EPBR/kvAoC0dwVWPeuBFGTObXXAyhWU="
-
+language: elixir
+elixir:
+  - 1.6.6
+  - 1.7.4
+  - 1.8.1
+otp_release:
+  - 20.3
+  - 21.3
+matrix:
+  include:
+    - otp_release: 19.3
+script: skip
