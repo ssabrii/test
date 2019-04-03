@@ -2,7 +2,7 @@ os: osx
 osx_image: xcode10.1
 language: objective-c
 before_install:
- - sudo ntpdate -u time.apple.com
+ - sudo sntp -sS time.apple.com
  - date
 
 install: skip
