@@ -1,7 +1,7 @@
 os: osx
 osx_image: xcode10.1
 language: objective-c
-before_install: 
-- date
+before_install: date
+
 install: skip
 script: true
