@@ -1,5 +1,7 @@
 os: osx
 osx_image: xcode10.1
-before_install: date
+before_install: 
+- sudo ntpdate -u time.apple.com
+- date
 install: skip
 script: true
