@@ -1,4 +1,5 @@
-dist: trusty
-language: ruby
+os: osx
+osx_image: xcode10.1
+before_install: date
 install: skip
-script: skip
+script: true
