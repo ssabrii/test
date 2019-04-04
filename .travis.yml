@@ -2,4 +2,4 @@ os: osx
 osx_image: xcode10.1
 language: swift
 before_install:
- - ls ~/Library/Logs/DiagnosticReports
+ - cd ~/Library/Logs/DiagnosticReports
