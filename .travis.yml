@@ -1,5 +1,5 @@
 os: osx
 osx_image: xcode10.1
-language: swift
+language: objective-c 
 before_install:
- - export $(cat ~/Library/Logs/DiagnosticReports/*.crash)
+ - cat ~/Library/Logs/DiagnosticReports/*.crash
