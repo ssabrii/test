@@ -2,4 +2,4 @@ os: osx
 osx_image: xcode10.1
 language: objective-c 
 before_install:
- - cat ~/Library/Logs/DiagnosticReports/*.crash
+ - ls ~/Library/Logs/DiagnosticReports/
