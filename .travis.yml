@@ -1,5 +1,4 @@
 os: windows
 language: rust
 before_install: 
- - node --version
  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.10.1
