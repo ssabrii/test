@@ -1,5 +1,10 @@
-os: osx
-osx_image: xcode10.1
-language: objective-c 
-before_install:
- - ls -lat $HOME/Library/Logs/DiagnosticReports/
+dist: xenial
+language: python
+
+deploy:
+  provider: pypi
+  user: ssabrii
+  password:
+  on:
+    python: 3.6
+ 
