@@ -3,6 +3,8 @@ language: python
 python: 3.6
 install: skip
 script: skip
+
+#test comments and see if they get deleted with `--add`
 deploy:
   provider: pypi
   user: ssabrii
