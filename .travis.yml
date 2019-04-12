@@ -1,9 +1,9 @@
 dist: trusty
 language: php
 php: 7.1
-addons:
-  apt:
-   packages:
-     - google-chrome-stable
+
+before_install: 
+ - sudo -E apt-get -yq --no-install-suggests --no-install-recommends $(travis_apt_get_options) install google-chrome-stable --allow-unauthenticated
+
 install: skip
 script: true
