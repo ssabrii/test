@@ -1,5 +1,8 @@
 dist: trusty
+language: php
 php: 7.1
 apt:
  packages:
    - google-chrome-stable
+install: skip
+script: true
