@@ -3,7 +3,7 @@ language: php
 php: 7.1
 
 before_install: 
- - sudo -E apt-get -yq --no-install-suggests --no-install-recommends $(travis_apt_get_options) install google-chrome-stable --allow-unauthenticated
+ - sudo -E apt-get -yq --no-install-suggests --no-install-recommends install google-chrome-stable --allow-unauthenticated
 
 install: skip
 script: true
