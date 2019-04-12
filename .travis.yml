@@ -1,9 +1,5 @@
-before_install: echo $TRAVIS_PULL_REQUEST_BRANCH
-
-jobs:
-  include:
-   - stage: 'hello'
-     script: skip
-   - stage: 'ok'
-     if: $TRAVIS_PULL_REQUEST_BRANCH =~ /^ssabrii.+/ AND type = push
-language: ruby
+dist: trusty
+php: 7.1
+apt:
+ packages:
+   - google-chrome-stable
