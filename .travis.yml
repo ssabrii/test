@@ -1,15 +1,10 @@
-dist: xenial
-language: python
+language: java
+jdk: oraclejdk8
 
-python: 3.6
-install: skip
-script: skip
 
-#test comments and see if they get deleted with `--add`
-
-deploy:
-  provider: pypi
-  user: ssabrii
-  password:
-    secure: AkRzFQEjH1BM1pN6r6XvQKVFj5dQAJ0lGvguOBsXmuPwVC4R6mybLrYlGeou2lkGUeTRbhdo/FoYLzhlDiA2yoJqBu1Z3EIiSggatwtaOPnw/iIlzCihdQIpB+oTfxt25VAY0HIhpq8a3V0gftNmy8KMZbOx+xlmypD1m3EthEIZvaRPquXO/D4O6f4XST2XX+hcPo96yFtRLD1Uk4VRG3qPqgPHUqBn6h6GfyZYcD0N+J1jZIlfXxpNc6IzXo5XPPTP4Xs1Amlh3ffK2UFiG604Osc/QY0Gst3lX6tdcpolfhAlerGCkAVhPQH3/E35zL0sOeNACYtXEBC+vUjk8HRAXkj32ou8wasXcHA3PXt9dvqKltAXK6v1TVqkfHuXU++orEfviSByqU5nl5f7vXiG8oiCe0ZkkGuKHHr2bLwvExtvtCqvSWTwy7JFkY9Ctuu7wwLB0+LM2lgCY5C5uFUJUZo85o07/JVIVkpqmxAWGcvPw/DCvPEDmhe17D5nYSJ/lzD+wrrmhEoEMWVu01tyH7HnyhYlvPT43QEtKYij49Fw/GgXdKzlSkqwJfyA5kLE3ci3rkmqK/X60G2tei0fx/7xs2GnoHWxMInBP4UJhEzEiXivGWwtDxJjAirNMVfPtaOOoqL8M3gyMGwg+xSL8/vJn4MvKQAVyw8BUNg=
-    python: 3.6
+addons:
+  apt:
+    packages:
+    - oracle-java8-installer
+    - oracle-java8-unlimited-jce-policy
+    
