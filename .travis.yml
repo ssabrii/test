@@ -17,6 +17,6 @@ jobs:
        condition: $TRAVIS_TAG =~ ^testing*$
 
 stages:
-  - name: test
+  - name: hello
   - name: deploy
     if: tag IS present
