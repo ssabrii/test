@@ -1,5 +1,5 @@
 language: ruby
-
+before_install: echo $TRAVIS_TAG
 install: skip
 script: true
 deploy:
