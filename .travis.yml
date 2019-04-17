@@ -9,3 +9,5 @@ deploy:
   file: text.html
   on:
     repo: ssabrii/test
+    tags: true
+    
