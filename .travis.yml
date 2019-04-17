@@ -1,6 +1,6 @@
-language: java
-jdk: oraclejdk8
+language: ruby
 install: skip
+script: true
 deploy:
   provider: releases
   api_key:
@@ -8,3 +8,5 @@ deploy:
   file: text.html
   on:
     repo: ssabrii/test
+    tags: true
+    condition: $TRAVIS_TAG =~ ^cli*$
