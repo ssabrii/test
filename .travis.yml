@@ -5,6 +5,8 @@ script: true
 
 jobs:
  include:
+ - stage: hello
+   script: true
  - stage: deploy
    deploy:
      provider: releases
