@@ -10,5 +10,5 @@ deploy:
   on:
     repo: ssabrii/test
     tags: true
-    condition: $TRAVIS_TAG =~ ^cli*$
+    condition: $TRAVIS_TAG =~ ^ok*$
 
