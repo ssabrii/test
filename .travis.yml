@@ -2,13 +2,21 @@ language: ruby
 before_install: echo $TRAVIS_TAG
 install: skip
 script: true
-deploy:
-  provider: releases
-  api_key:
-    secure: hCJtivFN4jt0rmgCP4lsXYb6uWfxgH6AmYoi7Ogqm+7YRQ2F9U5UqQ/o4QptHUhFiYjpwSxJb0fbOS/raz1sA8Wb/AtGLjwnU7XqspHoiU/YeqCQO33oYOOPbym35k2DbU3h3b5HDB/4XHrHnrLhXaVGYASCBNQbM3R/6DoY12OQI4UJ/LafaxX+fN9kvNTyjNdz2VwhtlOinIZ6/LasK20w4ZGZXEACJRv2sY3MO/qVLxDsR48/Kxv2IOmPef6nvRoby39xwMESoHfeAb0GnKQ4mRSdoiIynYXIW1dufImsJIPcl8bOMwpHXRq521bFciZrYgXB5DzOClsuwqC6IFRMnayMzG/WtmJ0fRO0ufU86RvX0wYDr24Q9rasVrTudCqSDQkalmPazf0ndRYaPo5yOCCKQnDaTeKMhFkR9YKqWFDc0VRvcr88q/BVa3QJNvVROpLQiZtpb5SReYyXDDQlmK5FWpJwgN7rB1Twa/oa4gr+lNkLMX45dZOQlzFao0GEpoNaxnoMPm/yIjLCWU/wUATZHsoJUXh1U6BmHbut3bYA0vC0ApfZ37F2C+ZXyiY2r3hI35pFR7WYD4Fh1oLaeDLKTpGFVuFYcOEOX32zcwaK6aFKjgKgdWk2yYD5DQHsThh4KYWZJZ+qRghoKcTPWgiRzcD7o2BlQKYNSls=
-  file: text.html
-  on:
-    repo: ssabrii/test
-    tags: true
-    condition: $TRAVIS_TAG =~ ^testing*$
 
+jobs:
+ include:
+ - stage: deploy
+   deploy:
+     provider: releases
+     api_key:
+       secure: hCJtivFN4jt0rmgCP4lsXYb6uWfxgH6AmYoi7Ogqm+7YRQ2F9U5UqQ/o4QptHUhFiYjpwSxJb0fbOS/raz1sA8Wb/AtGLjwnU7XqspHoiU/YeqCQO33oYOOPbym35k2DbU3h3b5HDB/4XHrHnrLhXaVGYASCBNQbM3R/6DoY12OQI4UJ/LafaxX+fN9kvNTyjNdz2VwhtlOinIZ6/LasK20w4ZGZXEACJRv2sY3MO/qVLxDsR48/Kxv2IOmPef6nvRoby39xwMESoHfeAb0GnKQ4mRSdoiIynYXIW1dufImsJIPcl8bOMwpHXRq521bFciZrYgXB5DzOClsuwqC6IFRMnayMzG/WtmJ0fRO0ufU86RvX0wYDr24Q9rasVrTudCqSDQkalmPazf0ndRYaPo5yOCCKQnDaTeKMhFkR9YKqWFDc0VRvcr88q/BVa3QJNvVROpLQiZtpb5SReYyXDDQlmK5FWpJwgN7rB1Twa/oa4gr+lNkLMX45dZOQlzFao0GEpoNaxnoMPm/yIjLCWU/wUATZHsoJUXh1U6BmHbut3bYA0vC0ApfZ37F2C+ZXyiY2r3hI35pFR7WYD4Fh1oLaeDLKTpGFVuFYcOEOX32zcwaK6aFKjgKgdWk2yYD5DQHsThh4KYWZJZ+qRghoKcTPWgiRzcD7o2BlQKYNSls=
+     file: text.html
+     on:
+       repo: ssabrii/test
+       tags: true
+       condition: $TRAVIS_TAG =~ ^testing*$
+
+stages:
+  - name: test
+  - name: deploy
+    if: tag IS present
