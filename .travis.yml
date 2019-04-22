@@ -1,2 +1,4 @@
 dist: xenial
-before_install: ulimit -a
+before_install: 
+ - docker run ulimit -n 60000
+ - ulimit -a
