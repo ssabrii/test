@@ -1,3 +1,2 @@
 dist: xenial
-services: xvfb
-script: ps -ef|grep Xvfb
+before_install: ulimit -n
