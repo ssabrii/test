@@ -1,5 +1,6 @@
 dist: xenial
 before_install: 
+ - su root
  - ulimit -n
  - ulimit -n 60000
  - ulimit -a
