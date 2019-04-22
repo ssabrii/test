@@ -1,4 +1,4 @@
 dist: xenial
 before_install: 
- - ulimit -n 6000
+ - ulimit -n 60000
  - ulimit -a
