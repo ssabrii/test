@@ -1,5 +1,5 @@
 dist: xenial
 before_install: 
  - ulimit -n
- - sudo sysctl -w fs.file-max=65000
+ - ulimt -n 60000
  - ulimit -a
