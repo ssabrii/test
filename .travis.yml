@@ -1,2 +1,2 @@
 dist: xenial
-before_install: ulimit -n
+before_install: ulimit -a
