@@ -1,3 +1,5 @@
 dist: xenial
 before_install: 
+ - sudo service docker stop
+ - sudo service docker start
  - ulimit -a 
