@@ -1,6 +1,6 @@
 os: osx
 language: generic
-before_install: gcc --version
+before_install: gcc-4.9 --version
 install: skip
 script: true
 
