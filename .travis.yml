@@ -1,4 +1,6 @@
-dist: xenial
-before_install: 
- - ulimit -n 60000
- - ulimit -a
+os: osx
+language: generic
+before_install: gcc --version
+install: skip
+script: true
+
