@@ -1,8 +1,4 @@
-os: osx
-language: generic
-before_install: 
- - brew install gcc@4.9 
- - gcc-4.9 --version
-install: skip
-script: true
-
+dist: xenial
+language: php
+php: '5.5'
+script: skip
