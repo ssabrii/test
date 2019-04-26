@@ -1,4 +1,8 @@
-dist: xenial
-language: php
-php: '7.2'
-script: skip
+os: osx
+before_install:
+ - sudo curl -s -L https://entrust.com/root-certificates/entrust_l1k.cer -o /usr/local/share/ca-certificates/entrust_l1k.crt
+ - sudo update-ca-certificates
+
+script:
+ - wget scan.coverity.com
+ 
