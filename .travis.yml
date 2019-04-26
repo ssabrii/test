@@ -1,3 +1,4 @@
 language: groovy
+dist: xenial
 jdk:
   - oraclejdk8
