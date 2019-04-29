@@ -1,4 +1,3 @@
-language: groovy
-dist: xenial
+dist: trusty
 jdk:
   - openjdk10
