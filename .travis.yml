@@ -1,5 +1,4 @@
-import: ssabrii/test/travis-ci/build-configs/rubies.yml
-
-dist: trusty
-jdk:
-  - openjdk12
+language: ruby
+before_install: cat ~/.gitconfig
+install: true
+script: true
