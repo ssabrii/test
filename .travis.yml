@@ -1,5 +1,3 @@
-import: ssabrii/test/travis-ci/build-configs/rubies.yml
+import: ssabrii/test/travis-ci/build-configs/rubies.yml@master
 
-dist: trusty
-jdk:
-  - openjdk12
+
