@@ -1,4 +1,4 @@
-language: ruby
-before_install: cat ~/.gitconfig
-install: true
-script: true
+language: java
+dist: xenial
+jdk:
+ - openjdk8
