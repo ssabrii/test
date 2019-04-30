@@ -1,4 +1,4 @@
-import: travis-ci/build-configs/rubies.yml@main
+import: ssabrii/test/travis-ci/build-configs/rubies.yml@main
 
 dist: trusty
 jdk:
