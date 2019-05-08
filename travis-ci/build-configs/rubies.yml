@@ -4,3 +4,6 @@ rvm:
  - 2.3
 install: true
 script: true
+branches:
+  only:
+  - master
