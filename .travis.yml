@@ -4,3 +4,6 @@ python:
 
 install: true
 script: skip
+branches:
+  only:
+  - master
