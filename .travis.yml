@@ -1,5 +1,13 @@
-dist: ruby
-language: php
-rvm: 2.5.0
+dist: xenial
+language: python
+jobs:
+  include:
+    - name: stable
+    - name: deprecated
+      group: deprecated
 addons:
- mariadb: '10.1'
+  mariadb: 10.1
+install: true
+script: ping -c 4 gcr.io
+notifications:
+  email: never
