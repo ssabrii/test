@@ -1,7 +1,5 @@
 dist: xenial
 language: ruby
-before_install:
- - echo eval(sender = 'ssabrii'
 stages:
  - test
  - name: hello
