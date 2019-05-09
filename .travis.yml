@@ -1,5 +1,5 @@
-dist: xenial
+dist: ruby
 language: php
-php: '7.1'
+rvm: 2.5.0
 addons:
  mariadb: '10.1'
