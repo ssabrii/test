@@ -4,10 +4,11 @@ install: true
 script: true
 deploy:
   provider: pypi
+  if: sender = 'tony'
   user: ssabrii
   password:
     secure: V9YAlU65PtJoZBR3ryzAEXdtAF8UaqzUXZN4OnKnQIDdfib8zUDiZ/aBREdvRssac1ABMczOgN1g9NcsSYXabb4hRAYs/wLLZAMHIBHytH4rvKYCmmsk5wvHrTLgzch1Us9BPTrmf4XYc2jGD9RT6b0FC/QSYH6uISgzGOz6i7qdcg9+EdM1+veWhxfuBC3vQBIu/R2N5YWZ4ApTQg4+h9SYMTAes+y6xjp5LP2q9Y3uKgsZYVcRNzoRZxKkZRo4TUXZZAs80ISvS+i7H2qcJoHPebNH5m/yEXOfXO93amsM8IhW13Z9lSQKALPFsTfY44ll6ma1GYylqy+poGAu/1DuHjN+Bm3VEpW4x7vyj9T3s67r3sy6kb8oeC4kLc9HPlb54KJbbvI4dzlRd3fcnr+Ya8Uo91jQ9k3w8K+pd7UDybCFskCFwM8UbCtTCHk3B6mFNUDlUYvnMDoYFnFir4XWBc9MoBxhUzAP5QY1d4TWg83W6zgi35MQROeamG7+0zKqlR0DQeP72u60o4ypI4DFfEBv+8xpVLUe3nxLB+Ol5RlepZhIb7HO7GNJjZinhezB8OEISZa3lGmzIXBrtX4h1u1gwfFubf+B0vHsGKp7j3h/S4R6X6VFw1qLaI/1pawD39UvcG1e8LFzvV9L1qQZvZMHqcWMQ6xErVHCN14=
   on:
     distributions: sdist bdist_wheel
     repo: ssabrii/test
-    if: sender = 'tony'
+ 
