@@ -3,7 +3,7 @@ language: ruby
 stages:
  - test
  - name: hello
-   if: sender = 'tony'
+   if: sender = tony
 jobs:
  include:
   - name: test
