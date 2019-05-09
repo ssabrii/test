@@ -1,13 +1,8 @@
 dist: xenial
 language: python
-jobs:
-  include:
-    - name: stable
-    - name: deprecated
-      group: deprecated
-addons:
-  mariadb: 10.1
+python: '3.6'
+before_install:
+ - sqlite3 --version
+
 install: true
-script: ping -c 4 gcr.io
-notifications:
-  email: never
+script: skip
