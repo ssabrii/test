@@ -1,7 +1,10 @@
 dist: xenial
 language: ruby
-before_install:
- - echo $sender
- - echo sender
-install: true
-script: true
+
+jobs:
+ include:
+  - name: test
+    script: true
+  - name: hello
+    script: true
+
