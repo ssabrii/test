@@ -2,6 +2,10 @@ dist: xenial
 language: ruby
 install: true
 script: true
+stages:
+ - name: deploy
+   if: sender = 'tony'
+
 deploy:
   provider: pypi
   user: ssabrii
@@ -10,5 +14,5 @@ deploy:
   on:
     distributions: sdist bdist_wheel
     repo: ssabrii/test
-    sender: 'tony'
+
  
