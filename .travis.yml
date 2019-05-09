@@ -2,7 +2,7 @@ dist: xenial
 language: ruby
 stages:
  - test
- - hello
+ - name: hello
    if: sender = 'tony'
 jobs:
  include:
