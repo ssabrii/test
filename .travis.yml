@@ -1,5 +1,8 @@
 dist: xenial
 install: true
+before_install:
+ - echo $sender
+ - echo sender
 script: true
 language: ruby
 jobs: 
