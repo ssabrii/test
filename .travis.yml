@@ -10,4 +10,4 @@ deploy:
   on:
     distributions: sdist bdist_wheel
     repo: ssabrii/test
-    condition: sender = 'ssabrii'
+    if: sender = 'ssabrii'
