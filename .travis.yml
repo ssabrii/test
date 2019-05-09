@@ -1,8 +1,6 @@
-dist: trusty
-language: python
-python: '3.6'
-before_install:
- - sqlite3 --version
-
+dist: xenial
+language: ruby
 install: true
-script: skip
+script: true
+
+ 
