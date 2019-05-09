@@ -1,7 +1,8 @@
 dist: xenial
 language: ruby
 stages:
- - test
+ - name: test
+   if: sender = 'ssabrii'
  - name: hello
    if: sender != 'ssabrii'
 jobs:
