@@ -1,6 +1,9 @@
 dist: xenial
 language: ruby
-
+stages:
+ - test
+ - hello
+   if: sender = 'tony'
 jobs:
  include:
   - name: test
