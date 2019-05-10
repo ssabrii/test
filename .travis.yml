@@ -1,14 +1,13 @@
 dist: xenial
-language: ruby
-stages:
- - name: test
-   if: sender = 'ssabrii'
- - name: hello
-   if: sender != 'tony'
-jobs:
- include:
-  - stage: test
-    script: true
-  - stage: hello
-    script: true
-
+language: node_js
+node_js: 11
+install: true
+script: true
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  
+  keep_history: true
+  on:
+    branch: master
+ 
