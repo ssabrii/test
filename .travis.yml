@@ -1,13 +1,8 @@
 dist: trusty
-language: node_js
-node_js: 11
+language: minimal
+before_install:
+ - sudo apt-get install dotnet-sdk-2.1
+
 install: true
-script: true
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN  
-  keep_history: true
-  on:
-    branch: master
+script: skip
  
