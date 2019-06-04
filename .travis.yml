@@ -1,7 +1,10 @@
 dist: xenial
 language: python
 python:
-- "2.6"
-- "2.7"
+- '2.6'
+- '2.7'
 install: skip
 script: true
+notifications:
+  slack:
+    secure: Ser7N8QXWOaIGDk3odpzVfQ58qkkXLVvyiLzfoHTz1d8WYG62v6mi+fEmhvhaR2+A4BFVoQPeXVGrfQQ5GrmdVccQx0xpEFdO3Gd/LuC48WGAIGrlV7zGDrSXrgUSZNQQemYHNTdYzqpfg5pjYhvGm9FlOBJjPIWXhdqa4G/yFNgWAMunv1HhqAWPgWUXltjOnmkpZZolxy38Rw9Lv6+rBmwUqRwafe6s4tV8dfz+6A14SVFxUdHO4GVA+LtwLyWIcOzFqoWiTnQ58aefysFB5BdchTUWU9jpVpukHxnYw27h5zxSlX4Np/QQWCt1Rel3zUaq4uavu/kwoQw67cvmKDCBHYjVRFODekANhZjLXOA929xf/x+1UBgCWJRiEsjCL9KAOwH17ZHMHA5Cl5V8GVlzSACu0J2b2l7tWGP3gH/dM3BeaxP+odEkmIikXTskcO0gjh04IPunP9DOImfMoDjOgaA4L74HFmqP0YbXJpeKAgNRnxAbR+0f3XKzCzX10iI3kES+hMyJD3gzFU3WUKYgUGlxmG3xwj4nvqwxFvZ7+ehG4y0QqUS9pZgOhMBbLLC+YMe7+O6goGzKy3cn+pwR5IQk8u4btpzau2xD0e7ZbCHS3w9bfo2Sfoxms5mFNehRFW41rZA0r6J44FBAwwpamJwyluEzQsOZcQS8r4=
