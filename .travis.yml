@@ -3,9 +3,7 @@ language: node_js
 jdk: oraclejdk8
 node: '10'
 install: skip
-script: 
- - nvm use 12.4.0
- - node -v
+script: ./test.sh
 
 notifications:
   slack:
