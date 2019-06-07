@@ -1,5 +1,5 @@
 dist: trusty
-language: node_js
+language: ec-xenial
 jdk: oraclejdk8
 node: '11'
 install: skip
