@@ -2,7 +2,9 @@ dist: trusty
 language: node_js
 node: '10'
 install: skip
-script: node -v
+script: 
+ - nvm use 12.14.0
+ - node -v
 
 notifications:
   slack:
