@@ -1,10 +1,9 @@
-dist: xenial
-language: python
-python:
-- '2.6'
-- '2.7'
+dist: trusty
+language: node_js
+node: '10'
 install: skip
-script: 
+script: node -v
+
 notifications:
   slack:
     rooms:
