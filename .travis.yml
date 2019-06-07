@@ -3,6 +3,7 @@ language: ec-xenial
 jdk: oraclejdk8
 node: '11'
 install: skip
+name: dist trusty
 before_script: chmod +x ./test.sh
 script: ./test.sh
 
