@@ -1,7 +1,7 @@
 dist: xenial
 language: python
 install: skip
-script: snap -v
+script: snap version
 
 notifications:
   slack:
