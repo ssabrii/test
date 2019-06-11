@@ -5,6 +5,7 @@ addons:
  snaps:
   - name: ruby
     confinement: classic
+script: snap list
   
 
 notifications:
