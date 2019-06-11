@@ -1,11 +1,7 @@
-dist: trusty
-language: ec-xenial
-jdk: oraclejdk8
-node: '11'
+dist: xenial
+language: python
 install: skip
-name: dist trusty
-before_script: chmod +x ./test.sh
-script: ./test.sh
+script: snap -V
 
 notifications:
   slack:
