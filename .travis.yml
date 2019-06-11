@@ -1,14 +1,10 @@
 dist: xenial
-language: python
-python:
-- '2.6'
-- '2.7'
-install: skip
-script: 
-notifications:
-  slack:
-    rooms:
-      secure: P+yNQAAEVWRTSzKPVMHWKM7smuMiT4qRFFjocxgJ52sy/hSK8qxAYdjnhBXwc3kn/0pBMsjik7RBOEkGq9CNHXDcGOkMheLO0n0rK4RJkhPgvFiuMLDPEmCb7kWmdEnQQU/UMMqvCXRV2fjOpfJ2B/qMqQESvQUoTuvDEHm/B/ep7lNMbWbhRWwRnw6Qif0NPWsNyt3EZZ2jLJaP7WQR1xJHmGbpHzyjJKgjMo/ak4eV518u3RPgi0Y2fKw+hEmBViOqxugCx+D6+SAhOObc78HqMv0AwrO+P1zC0u5Ob7uusaAZWe19V5/mW947hmKSW2AYGgqMUkaluwESNSG5Mfw+XqgcAH0puYgBstGl8X3G8beFbm6i/EMdcYNO1M5phFtFxnbSRPOPUY3YPcYTZQktbaC93oj+dQaezRKnbybpemNbLF2xb0jgWtbwLi+u1cqzWLHakATcTNGzrTUGek7Z8XlFpk68KJrL4EFu3E+qfAn9TgROW3crC0co1lwh+EFikTT91JY61xgZcF/6PPJF49kM1oCUFIQfP8LW8PVLzRPyLnOWDMnlOyyguSHHiIJXNr97wnqcmYvWfIgTAtAxOnqwyACRtks8bxHKlh+u2/Zv29s0h/BqeDyLXRZyJv0DHfH0fBNy1sZuLDyy4EowCEwI867vKVHFcXdRvpY=
-    on_success: always
-    on_failure: always
-    on_error: always
+language:bash
+import: ssabrii/test/travis-ci/build-configs/.snap.yml
+
+after_success:
+  - cp *.snap "$(echo "$TRAVIS_REPO_SLUG" | sed -e 's|.*/\(.*\)|\1|')-pr$TRAVIS_PULL_REQUEST.snap"
+  - timeout 180 /snap/bin/transfer "$(echo "$TRAVIS_REPO_SLUG" | sed -e 's|.*/\(.*\)|\1|')-pr$TRAVIS_PULL_REQUEST.snap"
+after_failure:
+  - sudo journalctl -u snapd
+  - http https://api.snapcraft.io/v2/snaps/info/core architecture==amd64 Snap-Device-Series:16
