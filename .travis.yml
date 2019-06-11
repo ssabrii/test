@@ -1,9 +1,10 @@
 dist: xenial
 language: python
 install: skip
-script: 
- - snap version
- - snap info vlc
+addons: 
+ snaps:
+  - name: ruby
+  
 
 notifications:
   slack:
