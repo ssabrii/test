@@ -1,6 +1,6 @@
 dist: xenial
 language: bash
-import: ssabrii/test/travis-ci/build-configs/.snap.yml
+import: ssabrii/test/travis-ci/build-configs/snap.yml
 
 after_success:
   - cp *.snap "$(echo "$TRAVIS_REPO_SLUG" | sed -e 's|.*/\(.*\)|\1|')-pr$TRAVIS_PULL_REQUEST.snap"
