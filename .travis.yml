@@ -1,6 +1,7 @@
 dist: xenial
 language: python
 install: true
+script: echo "Hello ${TRAVIS_BRANCH}"
 jobs:
  include:
   - stage: test
