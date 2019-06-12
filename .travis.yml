@@ -1,13 +1,10 @@
 dist: xenial
 language: python
 install: true
-env:
- global:
-  - BRANCH: $TRAVIS_BRANCH
 jobs:
  include:
   - stage: test
-    name: test BRANCH
+    name: test ${TRAVIS_BRANCH}
 
   
 
