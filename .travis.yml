@@ -1,11 +1,12 @@
 dist: xenial
 language: python
-install: skip
-addons: 
- snaps:
-  - name: ruby
-    confinement: classic
-script: snap list
+install: true
+script: skip
+jobs:
+ include:
+  - stage: test
+    name: test $TRAVIS_BRANCH
+
   
 
 notifications:
