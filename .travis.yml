@@ -1,5 +1,5 @@
 dist: xenial
-language: java
+language: groovy
 
 before_install: ant setup
 script: echo $(ant -version)
