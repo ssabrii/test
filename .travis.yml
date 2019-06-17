@@ -1,7 +1,10 @@
 dist: xenial
-language: perl
-perl:
-  - "5.28"
+language: php
+php: "7.0"
+before_install: sudo apt-get install php7.0-sqlite3
+script: skip
+install: skip
+
 
   
 
