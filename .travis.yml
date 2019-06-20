@@ -2,10 +2,11 @@ osx_image: xcode10.2
 language: objective-c
 addons:
   homebrew:
+    packages:
+     - vtk
     update: true
 
-install: brew install vtk --with-python
-
+script: vtk --with-python
   
 
 notifications:
