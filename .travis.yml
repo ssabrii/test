@@ -1,9 +1,9 @@
-dist: trusty
-language: groovy
+os_image: xcode10.2
+addons:
+  homebrew:
+    update: true
 
-before_install: ant setup
-script: echo $(ant -version)
-install: skip
+install: brew install vtk --with-python
 
   
 
