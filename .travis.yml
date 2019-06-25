@@ -1,13 +1,6 @@
 dist: xenial
 language: bash
-import: ssabrii/test/travis-ci/build-configs/snap.yml
-
-after_success:
-  - cp *.snap "$(echo "$TRAVIS_REPO_SLUG" | sed -e 's|.*/\(.*\)|\1|')-pr$TRAVIS_PULL_REQUEST.snap"
-  - timeout 180 /snap/bin/transfer "$(echo "$TRAVIS_REPO_SLUG" | sed -e 's|.*/\(.*\)|\1|')-pr$TRAVIS_PULL_REQUEST.snap"
-after_failure:
-  - sudo journalctl -u snapd
-  - http https://api.snapcraft.io/v2/snaps/info/core architecture==amd64 Snap-Device-Series:16
+script: git log --pretty=%B | grep "^\[skip ci\]"
 
 
 notifications:
