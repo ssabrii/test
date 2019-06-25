@@ -1,6 +1,6 @@
 language: java
 dist: trusty
 jdk:
- - openjdk11
+ - openjdk9
 install: true
 script: true
