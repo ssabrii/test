@@ -1,4 +1,4 @@
-language: python
+language: java
 dist: xenial
 jdk:
  - oraclejdk11
