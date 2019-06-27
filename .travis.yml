@@ -1,6 +1,6 @@
 language: java
-dist: trusty
+dist: xenial
 jdk:
- - openjdk9
+ - oraclejdk12
 install: true
 script: true
