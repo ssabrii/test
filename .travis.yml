@@ -1,5 +1,7 @@
-language: python
+language: java
 dist: xenial
-before_install: sudo add-apt-repository ppa:fkrull/deadsnakes-python2.7 -y
+jdk:
+ - oraclejdk11
+ - openjdk11
 install: true
 script: true
