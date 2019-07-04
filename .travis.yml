@@ -1,7 +1,9 @@
-dist: xenial
-language: bash
-script: git log --pretty=%B | grep "^\[skip ci\]"
+language: node_js
+node_js: 9.2.0
+before_install: NODE_OPTIONS=--max_old_space_size=4096 npm run builds
 
+script: true
+  
 
 notifications:
   slack:
