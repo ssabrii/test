@@ -8,10 +8,7 @@ script: echo $TRAVIS_TAG
 deploy:
  provider: script
  script: echo 'Deploy!'
- on:
-   all_branches: true
 
-  
 
 notifications:
   slack:
