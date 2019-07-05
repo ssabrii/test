@@ -13,7 +13,7 @@ only:
 
 deploy: 
 provider: script 
-script: echo 'Deploy!"
+script: echo 'Deploy!'
 on: 
 all_branches: true 
 
