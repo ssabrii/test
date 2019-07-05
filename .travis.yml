@@ -1,7 +1,7 @@
 language: node_js
 node_js: 9.2.0
 
-script: true
+script: echo $TRAVIS_TAG
 
 install: true
 
