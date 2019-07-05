@@ -1,22 +1,8 @@
 language: node_js
 node_js: 9.2.0
 
-
-install: true
-script: echo $TRAVIS_TAG
-
-branches: 
-only: 
-- develop 
-- master 
-- /^deploy.*$/ 
-
-deploy: 
-provider: script 
-script: echo 'Deploy!'
-on: 
-all_branches: true 
-
+dist: trusty
+services: docker
 
 notifications:
   slack:
