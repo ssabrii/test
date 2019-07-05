@@ -3,6 +3,15 @@ node_js: 9.2.0
 before_install: NODE_OPTIONS=--max_old_space_size=4096 npm run builds
 
 script: true
+
+install: true
+
+deploy:
+ provider: script
+ script: echo 'Deploy!'
+ on:
+   all_branches: true
+
   
 
 notifications:
