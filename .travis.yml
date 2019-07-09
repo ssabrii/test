@@ -2,7 +2,10 @@ language: node_js
 node_js: 9.2.0
 
 dist: xenial
-services: rabbitmq
+addons:
+  apt:
+    packages:
+    - rabbitmq-server 
 
 install: true
 script: skip
