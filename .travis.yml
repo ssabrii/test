@@ -1,6 +1,8 @@
 language: ruby
-rvm: jruby-9.2.6.0
 dist: xenial
+before_install:
+ - rvm get head
+ - rvn install jruby-9.2.6.0
 
 
 install: true
