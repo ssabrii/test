@@ -1,8 +1,9 @@
 language: ruby
 dist: xenial
 before_install:
- - rvm get head
- - rvm install jruby-9.2.6.0
+ - date
+ - export TZ='Asia/Dubai'
+ - date
 
 
 install: true
