@@ -6,6 +6,10 @@ services:
 
 addons:
   postgresql: "11"
+  apt:
+   packages:
+    - postgresql-10
+    - postgresql-client-10
 
 install: true
 script: true
