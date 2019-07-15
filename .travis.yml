@@ -1,13 +1,9 @@
-language: ruby
+language: rust
 dist: xenial
-before_install:
- - date
- - export TZ='Asia/Dubai'
- - date
-
-
+rust: stable
 install: true
-script: skip
+script: rustc --version 
+
 
 notifications:
   slack:
