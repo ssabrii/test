@@ -1,8 +1,14 @@
-language: rust
+language: python
 dist: xenial
-rust: stable
+
+services:
+  - postgresql
+
+addons:
+  postgresql: "11"
+
 install: true
-script: rustc --version 
+script: true
 
 
 notifications:
