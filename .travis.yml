@@ -12,7 +12,8 @@ addons:
     - postgresql-client-11
 
 install: true
-script: true
+script:
+  - psql -c 'create database travis_ci_test;' -U postgres -w
 
 
 notifications:
