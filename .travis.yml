@@ -1,9 +1,9 @@
-language: python
+language: java
 dist: trusty
+jdk: oraclejdk8
 
-before_install: wget -qO- https://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add -v -"
-addons:
-  rethinkdb: '2.3.5'
+before_install: ant -version
+
     
 install: true
 script: true
