@@ -1,6 +1,10 @@
-language: android
+language: python
 dist: xenial
-jdk: oraclejdk8
+
+addons:
+  apt:
+    packages:
+    - rabbitmq-server
 
 
 
