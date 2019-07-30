@@ -1,10 +1,8 @@
 language: ruby
-dist: bionic
-services:
-- mysql
-- redis-server
-install: true
-script: true
+dist: trusty
+addons:
+  rethinkdb: '2.3.5'
+  
 notifications:
   slack:
     rooms:
