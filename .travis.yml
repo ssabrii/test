@@ -1,8 +1,7 @@
 language: ruby
 dist: trusty
-addons:
-  rethinkdb: '2.3.5'
-script: printf "%b\n" "Foo\nBar"
+
+script: if [ "$TRAVIS_EVENT_TYPE" = "push" ]; then echo "$TRAVIS_JOB_NAME";fi
   
 notifications:
   slack:
