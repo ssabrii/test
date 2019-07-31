@@ -2,6 +2,7 @@ language: ruby
 dist: trusty
 addons:
   rethinkdb: '2.3.5'
+script: printf "${marker}%b${ANSI_RESET}\n" "$text"
   
 notifications:
   slack:
