@@ -1,7 +1,7 @@
 language: ruby
 dist: trusty
 
-script: if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then echo "Build triggered by ${TRAVIS_JOB_ID}";fi
+script: if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then echo "Build triggered by ${TRAVIS_BRANCH}";fi
   
 notifications:
   slack:
