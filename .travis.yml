@@ -1,14 +1,8 @@
 language: ruby
 dist: xenial
 
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
 
-install: true
+install: sudo apt-get update
 script: true
   
 notifications:
