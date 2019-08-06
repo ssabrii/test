@@ -2,6 +2,7 @@ language: java
 dist: xenial
 install: skip
 script: skip
+before_install: sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/10/main/postgresql.conf
 
 before_script:
   - psql -U travis -c "CREATE USER test WITH PASSWORD 'password';"
