@@ -1,18 +1,33 @@
 language: php
-php:
-- 5.6
-- 7.0
 script: true
 install: true
 
-matrix:
-  include:
-  - php: 7.0
-    env: KEY=VALUE
-    script: false
+env:
+  global:
+    - LENIENT: false
+
+jobs:
   allow_failures:
-  - php: 7.0
-    env: KEY=VALUE
+    - env: LENIENT: true
+    
+  include:
+    - stage: tests
+      script: true
+
+    - stage: tests
+      script: true
+
+    - stage: deploy
+      name: 'Deploy'
+      env: ENVIRONMENT=production
+      script: true
+
+
+    - stage: performance
+      name: 'Performance Tests'
+      env:
+        - LENIENT: true
+      script: false
   
 notifications:
   slack:
