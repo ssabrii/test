@@ -4,11 +4,11 @@ install: true
 
 env:
   global:
-    - LENIENT: false
+    - LENIENT=false
 
 jobs:
   allow_failures:
-    - env: LENIENT: true
+    - env: LENIENT=true
   include:
     - stage: tests
       script: true
@@ -24,7 +24,7 @@ jobs:
 
     - stage: performance
       name: 'Performance Tests'
-      env: LENIENT: true
+      env: LENIENT=true
       script: false
   
 notifications:
