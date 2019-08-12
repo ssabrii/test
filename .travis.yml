@@ -1,27 +1,14 @@
+if: tag IS present
+
 language: python
 
-addons:
-  postgresql: "10"
-  apt:
-    packages:
-    - postgresql-10
-    - postgresql-client-10
-env:
-  global:
-  - PGPORT=5433
+# branches:
+#   only:
+#   - develop
+#   - qa
 
-install: skip
-script: skip
-
-jobs:
-  include:
-    - os: linux
-      dist: trusty
-    - os: linux
-      dist: xenial
-    - os: linux
-      dist: bionic
-
+python:
+  - "3.6"
 
 
   
