@@ -1,4 +1,5 @@
 language: perl
+perl: "5.26"
 dist: xenial
 script: echo TRAVIS_PERL_VERSION
 install: true
