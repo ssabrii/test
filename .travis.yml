@@ -3,10 +3,10 @@ language: python
 
 jobs:
   include:
-    - os:linux
+    - os: linux
       dist: trusty
       before_install: travis_retry sudo apt-get update
-    - os:linux
+    - os: linux
       dist: xenial
       before_install: travis_retry sudo apt-get update
     - os: linux
