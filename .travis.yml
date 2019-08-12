@@ -1,17 +1,14 @@
 language: python
-
+before_install: travis_retry sudo apt-get update
 
 jobs:
   include:
     - os: linux
       dist: trusty
-      before_install: travis_retry sudo apt-get update
     - os: linux
       dist: xenial
-      before_install: travis_retry sudo apt-get update
     - os: linux
       dist: bionic
-      before_install: travis_retry sudo apt-get update
 
 
 
