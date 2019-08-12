@@ -1,31 +1,9 @@
-language: php
-script: true
+language: perl
+dist: xenial
+script: echo TRAVIS_PERL_VERSION
 install: true
 
-env:
-  global:
-    - LENIENT=false
 
-jobs:
-  allow_failures:
-    - env: LENIENT=true
-  include:
-    - stage: tests
-      script: true
-
-    - stage: tests
-      script: true
-
-    - stage: deploy
-      name: 'Deploy'
-      env: ENVIRONMENT=production
-      script: true
-
-
-    - stage: performance
-      name: 'Performance Tests'
-      env: LENIENT=true
-      script: false
   
 notifications:
   slack:
