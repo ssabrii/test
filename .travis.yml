@@ -2,8 +2,7 @@ language: python
 
 
 
-dist:
-  - bionic
+dist: bionic
 
 
 before_script:
