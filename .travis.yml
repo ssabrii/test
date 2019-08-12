@@ -1,5 +1,17 @@
 language: python
-before_install: travis_retry sudo apt-get update
+
+addons:
+  postgresql: "10"
+  apt:
+    packages:
+    - postgresql-10
+    - postgresql-client-10
+env:
+  global:
+  - PGPORT=5433
+
+install: skip
+script: skip
 
 jobs:
   include:
