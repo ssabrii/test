@@ -7,7 +7,7 @@ dist:
   - bionic
 
 addons:
-  postgresql: "11"
+  postgresql: "11.2"
   apt:
     packages:
       - postgresql-11
