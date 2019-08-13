@@ -1,15 +1,8 @@
-if: tag IS present
-
-language: python
-
-branches:
-  only:
-  - master
-  - /^v.*/
-
-
-python:
-  - "3.6"
+language: java
+jdk: openjdk8
+dist: xenial
+install: true
+script: true
 
 
   
