@@ -1,6 +1,6 @@
 os: windows
 language: node_js
-before_install: node `npm prefix -g`/node_modules/npm/bin/npm-cli.js i -g npm@5
+before_install: nvs add 5
 install: true
 script: true
 
