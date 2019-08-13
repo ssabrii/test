@@ -1,6 +1,6 @@
 os: windows
 language: node_js
-before_install: nvs add 5
+before_install: nvs add 5.0
 install: true
 script: true
 
