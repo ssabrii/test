@@ -1,12 +1,17 @@
-os: windows
-language: node_js
-node_js: 8
-before_install: node `npm prefix -g`/node_modules/npm/bin/npm-cli.js i -g npm@5
+language: python
+dist: xenial
 install: true
-script: true
+script: 
+ - if [[ "$TRAVIS_BRANCH" = "master" ]]; echo 'Hello world'; fi
+ - echo $TRAVIS_PULL_REQUEST
+ - echo $TRAVIS_PULL_REQUEST_BRANCH
+ - if [[ "$TRAVIS_BRANCH" = "master" && "$TRAVIS_EVENT_TYPE" = "push"]]; then echo "Hello world again"; fi
+ 
+ after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]; then
+      echo $TRAVIS_BUILD_NUMBER;
+    fi
 
-
-  
 
 
   
