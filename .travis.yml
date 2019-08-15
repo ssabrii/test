@@ -1,6 +1,6 @@
 language: java
 dist: xenial
-
+version: "= 1.0.0"
 jdk: openjdk8
 install: true
 script: true
