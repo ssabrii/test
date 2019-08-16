@@ -10,11 +10,10 @@ addons:
     - postgresql-client-10
 services:
   - postgresql
-env:
-  global:
 
 
-before_install: psql -c 'create database travis_ci_test;' -U postgres
+
+before_install: sudo netstat -plunt |grep postgres
   
 notifications:
   slack:
