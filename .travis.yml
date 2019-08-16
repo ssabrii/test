@@ -1,12 +1,20 @@
-language: java
-dist: xenial
-version: "= 1.0.0"
-jdk: openjdk8
-install: true
-script: true
+language: node_js
 
+node_js:
+  - lts/*
+addons:
+  postgresql: "10"
+  apt:
+    packages:
+    - postgresql-10
+    - postgresql-client-10
+services:
+  - postgresql
+env:
+  global:
+    - PGPORT=5433
 
-
+before_install: psql -c 'create database travis_ci_test;' -U postgres
   
 notifications:
   slack:
