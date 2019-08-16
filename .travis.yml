@@ -12,7 +12,7 @@ services:
   - postgresql
 env:
   global:
-    - PGPORT=5433
+
 
 before_install: psql -c 'create database travis_ci_test;' -U postgres
   
