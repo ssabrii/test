@@ -1,11 +1,9 @@
-language: ruby
-dist: bionic
-services:
-- mysql
-- redis-server
+language: node_js
 install: true
 script: true
+
 notifications:
   slack:
     rooms:
       secure: P2RfpOEqn+WLlbcch15kdc9N0GwoM/3ITsGDDXK/hK40okRuvdjAlMrxImnu3YBnwwWVTBD77z1GChliNjIfIXBdNqKim1Ya6Un8nV+zgJ8QvqtB9iaqyHZ5HU/ix655tmjiKExSvMVzsJ803LgvB8XB9mhOIgWVID9wQbuaat/Wwk9BG0POnjipE0sH/5tPsLHtQApEqt0Gs6Tz/lnRlwU/if2VIKAScax8PuoDkSc9wkiGmkxCIeOCXRI+vUEH++QVW77d46RXxlFkMJWoYW1kvdrw7tuUk6f4C4w8lxAixBmTFsziYH0hy1VP9HpaOrCdbmFHEmtYN1tlFbzmyY7lb7Q/BN2+OoiCxBwdnNOZZS8bsXE3pSEh5mqCoY75/P9UnGwX+czR1OvGVdbNM/Tp8drLvytKhKxvyDiFBOjkVGw3uJZUO3WUKw4DJWnLxF7xSECKiiU/maLsTivh5fbqRbg+Hm1ui4U0kjctL0CRr5iJ0d17qrbBphzSqPiDr9l1Kecy/PGjbOVeuN6CHq3atebeFV5QDT0lSn8U0DzJcfNv5vqBPJ5vDm54J+fnsgCieuxZJsWxaGDwTE0jevJsaFIWrwMskVmkDImsZlY+v9F6OIBgVhkqDK4JFCjEyVMRw4qEFaoSFBEfUVOdslpG00jc8+2tnP8ZLsQMeYk=
+
