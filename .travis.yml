@@ -1,6 +1,15 @@
 language: node_js
 install: true
-script: free -m
+script: 
+  - if [ $TRAVIS_BRANCH = master ]; then echo 'Hello world'; fi;
+  - echo $TRAVIS_PULL_REQUEST
+  - echo $TRAVIS_PULL_REQUEST_BRANCH
+  - if [ $TRAVIS_BRANCH = master && $TRAVIS_EVENT_TYPE = push ]; then echo "Hello world again"; fi;
+ 
+after_success:
+  - if [ $TRAVIS_BRANCH = master && $TRAVIS_PULL_REQUEST = false ]; then
+      echo $TRAVIS_BUILD_NUMBER;
+    fi;
 notifications:
   slack:
     rooms:
