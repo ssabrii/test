@@ -1,15 +1,36 @@
-language: node_js
-install: true
-script: 
-  - if [ $TRAVIS_BRANCH = master ]; then echo 'Hello world'; fi;
-  - echo $TRAVIS_PULL_REQUEST
-  - echo $TRAVIS_PULL_REQUEST_BRANCH
-  - if [ $TRAVIS_BRANCH = master ] && [ $TRAVIS_EVENT_TYPE = push ]; then echo "Hello world again"; fi;
- 
-after_success:
-  - if [ $TRAVIS_BRANCH = master ] && [ $TRAVIS_PULL_REQUEST = false ]; then
-      echo $TRAVIS_BUILD_NUMBER;
-    fi;
+
+dist: trusty
+group: staging
+
+
+env:
+  global:
+    - BUILD_ACTION=defaultS
+stages:
+  - name: build_and_push
+  - name: ui_tests
+  - name: static_prepare
+  - name: static_deploy
+  - name: deploy_paas
+  - name: post_deploy_hook
+
+jobs:
+  include:
+    - name: "Yarn Build & Docker Push"
+      stage: build_and_push
+      if: (type = push) AND (env(BUILD_ACTION) = defaultS)
+      script: echo 'a'
+
+    - name: "UI Tests"
+      stage: ui_tests
+      if: (type = push) AND (env("BUILD_ACTION") = default)
+      script: echo 'a'
+
+    - name: "UI Testsia"
+      stage: static_prepare
+      if: env(BUILD_ACTION)=defaultS
+      script: echo 'a'
+      
 notifications:
   slack:
     rooms:
