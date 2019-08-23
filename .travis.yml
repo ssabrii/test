@@ -28,7 +28,7 @@ jobs:
 
     - name: "UI Testsia"
       stage: static_prepare
-      if: type = pull_request
+      if: env(BUILD_ACTION) = defaultS
       script: echo 'test'
       
 notifications:
