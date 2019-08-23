@@ -2,9 +2,9 @@ language: python
 dist: xenial
 
 
-# env:
-#   global:
-#     - BUILD_ACTION=defaultS
+env:
+  global:
+    - BUILD_ACTION=defaultS
     
 stages:
   - name: build_and_push
