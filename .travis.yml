@@ -6,6 +6,7 @@ group: staging
 env:
   global:
     - BUILD_ACTION=defaultS
+    
 stages:
   - name: build_and_push
   - name: ui_tests
