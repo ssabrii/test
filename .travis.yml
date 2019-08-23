@@ -18,17 +18,17 @@ jobs:
   include:
     - name: "Yarn Build & Docker Push"
       stage: build_and_push
-      if: (type = push) 
+      if: (type = push) AND $BUILD_ACTION=defaultS
       script: echo 'a'
 
     - name: "UI Tests"
       stage: ui_tests
-      if: (type = push)
+      if: (type = push) AND $BUILD_ACTION=defaultS
       script: echo 'a'
 
     - name: "UI Testsia"
       stage: static_prepare
-      if: env(BUILD_ACTION)=defaultS
+      if: $BUILD_ACTION=defaultS
       script: echo 'a'
       
 notifications:
