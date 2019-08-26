@@ -1,15 +1,13 @@
-language: node_js
+language: python
 install: true
-script: 
-  - if [ $TRAVIS_BRANCH = master ]; then echo 'Hello world'; fi;
-  - echo $TRAVIS_PULL_REQUEST
-  - echo $TRAVIS_PULL_REQUEST_BRANCH
-  - if [ $TRAVIS_BRANCH = master ] && [ $TRAVIS_EVENT_TYPE = push ]; then echo "Hello world again"; fi;
- 
-after_success:
-  - if [ $TRAVIS_BRANCH = master ] && [ $TRAVIS_PULL_REQUEST = false ]; then
-      echo $TRAVIS_BUILD_NUMBER;
-    fi;
+before_install: 
+ - sudo apt-get install wget ca-certificates
+ - wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+before_script:
+ - sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+ - sudo apt-get update
+ - sudo apt-get install postgresql postgresql-contrib
+ script: true
 notifications:
   slack:
     rooms:
