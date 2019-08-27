@@ -2,7 +2,7 @@ language: python
 install: true
 dist: xenial
 services: mysql
- script: true
+script: true
 notifications:
   slack:
     rooms:
