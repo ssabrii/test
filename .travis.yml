@@ -1,6 +1,6 @@
 language: python
 addons:
-  sauce_connect: true
+ sauce_connect: true
 dist: xenial
 script: true
 notifications:
