@@ -1,13 +1,15 @@
 language: node_js
-node_js: 
- - "8"
-cache:
- directories:
- - $HOME/.npm
-  
+node_js:
+  - "8"
+
+branches:
+  only:
+    - master
 install: true
+
 script: true
-notifications:
-  slack:
-    rooms:
-      secure: VveBRDGNTRxwb24fji9yhQX9DPvVIqDwBq8vG1fZShXYE6oMFOqK6/1MzX2m7/DkUZxPTwsZkaDLkMhll9PEAw7Tug5vi+j94eilBi0Lpa6kMb1xfK18vNoDEc/l9AKJWlUOtFctUndVzSNnJwmAzdvAOvf8OwsZaIhgSSWYD5FWfvtmy52ZH+FnOdHEm5f7T0HOjixqMOHpoFmKZ2fnWKdZor7VKqI2TwIWAmacje7PzpvUnZCis+PG6ygxo58DlkoqGK1L0G0H6APrS0lwyMsBACwbwXOR9NXhBHSveGoIf88ZSno5sifaEss9Ia/b30nKsDSMiAjMbo51MU7caFB8weOilw7rNmXhcT7eiMM9bzZzjD0euAoKjOQfiwdjYp1/VT70cXSPrUO/rtJfntjC9zHaksFYsLUleUfBGtcveEIiwk5eQ6UUdg7TUEWcfsY7o0I1J0O+wR1KD3Q74nInDO3dtjIBDPchSUBpSiyCiOfcP6UQB8WqL2zJ318ErG8414ekzyZ6jgm5WBorKwQw5m0cBp8nepW4WfBoRVgqtvp+M4S0a57vVTNE7yVt+65BCRsnx0eUUysBUmyb72+ndXx7uYTidE0R7hYT2GHbwGcZUFrBvWoYO61774FarVgiQuYgFnWV24hNsXFVl0dZ8RStePj5e86qFc5q/xw=
+
+cache:
+  npm: true
+  directories:
+  - "$HOME/.npm"
