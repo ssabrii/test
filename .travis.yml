@@ -1,8 +1,10 @@
-language: java
-jdk: 
- - oraclejdk8
- - openjdk8
-dist: trusty
+language: node_js
+node_js: 
+ - "8"
+cache:
+ directories:
+  - $HOME/.npm
+  
 install: true
 script: true
 notifications:
