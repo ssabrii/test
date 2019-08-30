@@ -1,12 +1,10 @@
 language: ruby
-
+rvm: 
+ - 2.4.7
 dist: xenial
 branches:
   only:
     - master
-before_install:
- - sudo apt-get update
- - sudo apt-get --no-install-recommends -qq install alien bc libaio1 unzip
  
 install: true
 
