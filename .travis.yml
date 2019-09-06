@@ -1,9 +1,15 @@
-dist: trusty
-language: php
-php: 7.1
+language: java
+jdk: openjdk8
+dist: xenial
+branches:
+  only:
+    - master
+ 
+install: true
 
-before_install: 
- - sudo -E apt-get -yq --no-install-suggests --no-install-recommends install google-chrome-stable --allow-unauthenticated
-
-install: skip
 script: true
+
+# cache:
+#   npm: true
+#   directories:
+#   - "$HOME/.npm"
