@@ -1,9 +1,7 @@
 language: java
 jdk: openjdk8
 dist: trusty
-branches:
-  only:
-    - master
+
  
 install: true
 
