@@ -1,15 +1,15 @@
-language: python
-dist: bionic
-python:
- - 3.4
- - 3.5
+language: node_js
+node_js:
+  - "8"
 
- 
+branches:
+  only:
+    - master
 install: true
 
 script: true
 
-# cache:
-#   npm: true
-#   directories:
-#   - "$HOME/.npm"
+cache:
+  npm: true
+  directories:
+  - "$HOME/.npm"
