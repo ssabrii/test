@@ -14,7 +14,7 @@ deploy:
 services: 
  - postgresql
 addons:
-      postgresql: 11.5
+      postgresql: 11
       apt:
         packages:
           - postgresql-11
@@ -23,7 +23,7 @@ before_install:
   - sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/11/main/postgresql.conf
   - sudo cp /etc/postgresql/{10,11}/main/pg_hba.conf
   - sudo service postgresql stop
-  - sudo service postgresql start 11.5
+  - sudo service postgresql start 11
 before_script:
   - sudo netstat -plunt |grep postgres
   - psql -c 'create database travis_ci_test;' -U postgres
