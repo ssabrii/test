@@ -1,12 +1,12 @@
 language: c
 env:
  global:
-  - GOROOT=/usr/local/go
-  - GOPATH = $TRAVIS_BUILD_DIR
+  - GOROOT=~/go
+  - GOPATH=$TRAVIS_BUILD_DIR
 before_install:
  - wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz
  - sudo tar -xvf go1.13.linux-amd64.tar.gz
- - export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+ - export PATH=$GOROOT/bin:$PATH
 install: true
 script: 
  - go version
