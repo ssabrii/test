@@ -1,5 +1,6 @@
-language: swift
-osx_image: xcode10.1
+language: go
+go:
+ - master
 install: true
-script: sw_vers
+script: go version
 
