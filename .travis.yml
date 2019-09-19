@@ -1,7 +1,5 @@
 language: swift
 osx_image: xcode10.2
-env:
- global:
-  - BUILD_IOS=
+
 install: true
 skip: true
