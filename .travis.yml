@@ -14,8 +14,7 @@ addons:
           - google-chrome-stable fluxbox
           - postgresql-11
           - postgresql-client-11
-          - postgresql-11-postgis-2.5
-          - postgresql-11-postgis-2.5-scripts
+
 
 before_install:
   - sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/11/main/postgresql.conf
