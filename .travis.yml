@@ -6,7 +6,7 @@ services:
  - postgresql
 
 addons:
-      postgresql: 11
+      postgresql: 11.5
       apt:
         sources:
           - google-chrome
