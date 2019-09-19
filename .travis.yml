@@ -1,64 +1,7 @@
-language: node_js
-node_js:
-  - "10"
-services:
-  - docker
-git:
-  lfs_skip_smudge: true
+language: swift
+osx_image: xcode10.2
 env:
-  - DOCKER_COMPOSE_VERSION=1.23.0
-before_install:
-# Stop existing posgresql
-  - sudo /etc/init.d/postgresql stop
-# Configure NPM credentials so that we can access private repositories and perform deployments
-  - npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
-# Configure git credentials so that git-lfs can access private repository data
-  - git config credential.helper "store --file=.git/credentials"
-  - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-# Update git lfs files (this, combined with the skip_smudge above allows us to use travis caching instead of our GitHub data)
-  - git lfs pull
-# Install docker-squash to secure/shrink our images
-  - sudo pip install docker-squash
-# Install latest docker
-  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-  - sudo apt-get update
-  - sudo apt-get -y install docker-ce
-  - docker --version
-# Install docker-compose
-  - sudo rm /usr/local/bin/docker-compose
-  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - chmod +x docker-compose
-  - sudo mv docker-compose /usr/local/bin
-  - docker-compose --version
-# Login to Docker and bring up the app
-  - echo -n $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
-  - docker-compose up -d
-install:
-# Don't use a symlink node_modules directory on travis and production images
-  - sed -i '/ln -sfn \/node_modules\/ node_modules/d' ./package.json
-  - docker-compose exec -T dev yarn --silent install
-script:
-  - docker-compose exec -T dev yarn --silent run eslint
-  - docker-compose exec -T dev yarn --silent run html-lint
-  - docker-compose exec -T dev yarn --silent run openapi-lint
-  - docker-compose exec -T dev yarn --silent run cloc
-  - docker-compose exec -T dev yarn --silent run server-test --failTaskOnError --suppressPassed
-  - docker-compose exec -T dev yarn --silent run website-test --failTaskOnError --suppressPassed
-  - docker-compose exec -T dev yarn --silent run website-release
-  - docker-compose exec -T dev yarn --silent run lambda-build
-#  - docker-compose exec -T dev yarn --silent run e2e-test-build --suppressPassed
-  - docker-compose exec -T dev yarn --silent run create-docker --slug $TRAVIS_COMMIT
-# Create Docker image and squash it
-  - export REPO=analyticalgraphicsinc/cesium-composer
-  - export TAG=`echo github-$TRAVIS_BRANCH`
-  - docker build --quiet -t unsquashed --build-arg NPM_TOKEN=$NPM_TOKEN ./build/docker
-  - docker-squash -t $REPO:$TAG unsquashed
-# Debug - make sure images are correct
-  - docker images
-after_success:
-# Push to DockerHub
-  - docker push $REPO:$TAG
-cache:
-  directories:
-  - .git/lfs
+ global:
+  - BUILD_IOS=
+install: true
+skip: true
