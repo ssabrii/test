@@ -1,6 +1,112 @@
-language: swift
-osx_image: xcode10.2
-env:
- SERVER:
-install: true
-skip: true
+language: bash
+services:
+  - docker
+sudo: required
+
+
+
+
+jobs:
+  include:
+
+    ########
+    # Push #
+    ########
+
+    - stage: push
+      env:
+        COMMIT_DEVELOPMENT:
+      script: psykube push --tag ${TAG_COMMIT_DEVELOPMENT} --build-args NODE_ENV=development
+
+    # ALWAYS push commit as image to docker registry
+    - stage: push
+      env:
+        COMMIT_PRODUCTION:
+      script: psykube push --tag ${TAG_COMMIT_PRODUCTION}
+
+    # Push master as latest to docker registry
+    - stage: push
+      env:
+        LATEST:
+      if: branch = master AND type = push
+      script: psykube push --tag latest
+
+
+    ########
+    # Test #
+    ########
+
+    - stage: test
+      env:
+        TEST:
+      script:
+       - make lint-ci
+       - make test-unit-ci
+
+    - stage: test
+      env:
+        INTEGRATION:
+      script: make test-integration-ci
+
+    - stage: test
+      env:
+        SERVER:
+      script: make test-server-ci
+
+    - stage: test
+      env:
+        E2E:
+      script:
+        - export IMAGE_E2E="${DOCKER_BASE_IMAGE_PATH}/assessment-e2e:latest"
+        - export IMAGE_ASSESSMENT_FRONTEND=${DOCKER_BASE_IMAGE_PATH}/assessment-frontend:latest-e2e
+        - export IMAGE_ASSESSMENT_API=${IMAGE_COMMIT_PRODUCTION}
+
+        - curl -sSL https://raw.githubusercontent.com/CommercialTribe/travis-scripts/master/assessment-e2e.sh | bash
+
+    ##########
+    # Deploy #
+    ##########
+
+     # Apply feature/* to kubernetes staging on its own namespace
+    - stage: deploy
+      env:
+        FEATURE:
+      if: branch =~ ^feature\/.*$ AND type = push
+      deploy:
+        provider: script
+        script:
+          kubes-namespace-provisioner
+            --branch ${TRAVIS_BRANCH}
+            --github-api-token ${GITHUB_API_TOKEN}
+            --kube-config-path ~/.kube/config
+            --current-context ${K8S_CONTEXT_STAGING}
+            --image ${IMAGE_COMMIT_PRODUCTION}
+          && psykube apply feature -f .psykube.eventProcessor.yml --image ${IMAGE_COMMIT_PRODUCTION}
+        on:
+          branch: feature/*
+
+    # Apply master to kubernetes staging
+    - stage: deploy
+      env:
+        STAGING:
+      if: branch = master AND type = push
+      deploy:
+        provider: script
+        script:
+          psykube apply staging --image ${IMAGE_COMMIT_PRODUCTION}
+          && psykube apply staging -f .psykube.eventProcessor.yml --image ${IMAGE_COMMIT_PRODUCTION}
+        on:
+          branch: master
+
+    # Apply production to kubernetes production
+    - stage: deploy
+      env:
+        PRODUCTION:
+      if: branch = master AND type = push
+      deploy:
+        provider: script
+        script:
+          psykube apply production --image ${IMAGE_COMMIT_PRODUCTION}
+          && psykube apply production -f .psykube.eventProcessor.yml --image ${IMAGE_COMMIT_PRODUCTION}
+        on:
+          branch: master
