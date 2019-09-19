@@ -1,23 +1,5 @@
-language: ruby
+language: swift
+osx_image: xcode10.2
 install: true
-script: skip
+script: true
 
-services: 
- - postgresql
-
-addons:
-      postgresql: 11.5
-      apt:
-        sources:
-          - google-chrome
-        packages:
-          - google-chrome-stable fluxbox
-          - postgresql-11
-          - postgresql-client-11
-
-
-before_install:
-  - sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/11/main/postgresql.conf
-  - sudo cp /etc/postgresql/{10,11}/main/pg_hba.conf
-  - sudo service postgresql stop
-  - sudo service postgresql start 11
