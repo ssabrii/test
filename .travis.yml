@@ -2,4 +2,5 @@ language: objective-c
 osx_image: xcode11
 script: mdls -name kMDItemVersion /Applications/Safari.app/
 install: true
+after_script: sleep 10
 
