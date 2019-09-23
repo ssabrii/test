@@ -1,6 +1,5 @@
-language: swift
-osx_image: xcode11
-script: sudo mdls -name kMDItemVersion /Applications/Safari.app/
+language: ruby
+script: true 
 install: true
 after_script: sleep 10
 
