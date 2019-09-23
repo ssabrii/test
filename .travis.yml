@@ -1,5 +1,6 @@
 language: java
 script: ccache -s
+dist: trusty
 cache:
  - ccache: true
 install: true
