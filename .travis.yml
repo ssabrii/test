@@ -1,5 +1,8 @@
 language: java
-script: ccache -s
+script: 
+ - ccache -s
+ - ccache -M 5G
+ - ccache -s
 dist: trusty
 cache:
  - ccache: true
