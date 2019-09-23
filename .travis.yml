@@ -1,5 +1,7 @@
-language: ruby
-script: true 
+language: java
+script: ccache -s
+cache:
+ - ccache: true
 install: true
 after_script: sleep 10
 
