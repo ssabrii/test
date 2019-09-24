@@ -1,6 +1,6 @@
 language: php
 php: '7.2'
-dist: xenial
+dist: trusty
 install: true
 
 
@@ -8,6 +8,5 @@ install: true
 
 script:
   # Check Docker status.
-  - sudo docker run hello-world
-  - sudo systemctl status docker
+  - sudo docker pull nginx
 
