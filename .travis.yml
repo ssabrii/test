@@ -8,5 +8,6 @@ install: true
 
 script:
   # Check Docker status.
-  - sudo docker pull nginx
+  - sudo docker run hello-world
   - sudo systemctl status docker
+
