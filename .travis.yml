@@ -8,6 +8,5 @@ install: true
 
 script:
   # Check Docker status.
-  - curl -sSL https://get.docker.com/ | sh
-  - sudo systemctl start docker
+  - sudo docker pull nginx
   - sudo systemctl status docker
