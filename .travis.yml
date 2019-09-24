@@ -1,4 +1,3 @@
-services: docker
 language: php
 php: '7.2'
 dist: xenial
@@ -9,4 +8,6 @@ install: true
 
 script:
   # Check Docker status.
+  - curl -sSL https://get.docker.com/ | sh
+  - sudo systemctl start docker
   - sudo systemctl status docker
