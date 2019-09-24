@@ -1,4 +1,4 @@
-  
+services: docker
 language: php
 php: '7.2'
 dist: xenial
