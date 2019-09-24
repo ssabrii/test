@@ -1,16 +1,14 @@
   
 language: php
 php: '7.2'
-
+dist: xenial
 install: true
 env:
   global:
     - DOCKER_COMPOSE_VERSION="1.23.2"
 
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install docker-engine
+
 
 script:
   # Check Docker status.
-  - sudo service docker status
+  - sudo systemctl status docker
