@@ -1,38 +1,13 @@
-dist: xenial
-sudo: required
-language:
-  - go
+  
+language: php
+php: '7.2'
 
-go:
-  - '1.10'
-
-addons:
-  postgresql: 11.5
-  firefox: 45.4.0
-  apt:
-    sources:
-     - google-chrome
-    packages:
-     - google-chrome-stable fluxbox
-     - postgresql-11
-     - postgresql-11-postgis-2.5
-     - postgresql-11-postgis-2.5-scripts
-  sauce_connect: true
-#test
 install: true
-services:
-  - postgresql
-  - xvfb
-
-branches:
-  except:
-    - /^[0-9]+\.[0-9]+\.[0-9]+$/
-
-before_install:
-  - sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/11/main/postgresql.conf
-  - sudo cp /etc/postgresql/{10,11}/main/pg_hba.conf
-  - sudo service postgresql stop
-  - sudo service postgresql start 11
-  - psql -U postgres -c "create extension postgis"
+env:
+  global:
+    - DOCKER_COMPOSE_VERSION="1.23.2"
 
 
+script:
+  # Check Docker status.
+  - sudo service docker status
