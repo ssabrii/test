@@ -1,12 +1,8 @@
-language: php
-php: '7.2'
-dist: trusty
+language: ruby
+dist: xenial
 install: true
-
-
-
-
-script:
-  # Check Docker status.
-  - sudo docker pull nginx
+services:
+ - postgresql
+addons:
+  postgresql: "9.4"
 
