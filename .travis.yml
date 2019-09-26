@@ -1,8 +1,11 @@
 language: ruby
 dist: xenial
 install: true
+script: skip
 services:
  - postgresql
 addons:
   postgresql: "9.4"
+before_script:
+  - 'RAILS_ENV=test bundle exec rake db:create --trace'
 
