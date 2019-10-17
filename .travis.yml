@@ -1,6 +1,12 @@
-dist: trusty
-language: python
-python: 3.5.7
+
+
+matrix:
+  include:
+   - dist: trusty
+   - dist: xenial
+ 
+language: perl
+perl: 5.26-shrplib
 install: true
-script: skip
+script: openssl -v
 
