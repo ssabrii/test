@@ -8,5 +8,5 @@ matrix:
 language: perl
 perl: 5.26-shrplib
 install: true
-script: openssl -v
+script: openssl version -v
 
