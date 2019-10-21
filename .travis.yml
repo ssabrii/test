@@ -1,12 +1,25 @@
-
-
-matrix:
-  include:
-   - dist: trusty
-   - dist: xenial
- 
-language: perl
-perl: 5.26-shrplib
+rvm:
+- 2.3.1
+- 2.3.5
+- 2.4.0
+- 2.4.1
+- 2.4.2
+- 2.4.3
+- 2.4.4
+- 2.4.5
+- 2.4.6
+- 2.5.0
+- 2.5.1
+- 2.5.2
+- 2.5.3
+- 2.6.0
+- 2.6.1
+- 2.6.2
+- 2.6.3
+- 2.6.4
+- ruby-head
+language: ruby
+os: osx
 install: true
-script: openssl version -v
+script: true
 
