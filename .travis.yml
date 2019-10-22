@@ -1,6 +1,9 @@
-osx_image: xcode10.1
-language: swift
+osx_image: xcode10.1.19
+language: ruby
 os: osx
+rvm:
+ - 2.3.8
+
 install: true
 script: true
 
