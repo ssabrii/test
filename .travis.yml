@@ -1,9 +1,6 @@
-osx_image: xcode10.1.19
-language: ruby
-os: osx
-rvm:
- - 2.3.8
-
+language: java
+before_install: cat /proc/sys/vm/max_map_count
+dist: xenial
 install: true
 script: true
 
