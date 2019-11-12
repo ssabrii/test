@@ -1,5 +1,5 @@
 language: swift
 osx_image: xcode10.1
 install: true
-script: sw_vers
+script: true
 
