@@ -1,5 +1,5 @@
-language: swift
-osx_image: xcode11.2
+language: ruby
+os: osx
 before_install: brew install git-lfs
  
 install: true
