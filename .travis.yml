@@ -1,8 +1,6 @@
 language: ruby
 os: osx
-before_install:
-- brew update
-- brew install git-lfs
+rvm: 2.1.2
  
 install: true
 script: true
