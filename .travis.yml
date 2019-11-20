@@ -1,6 +1,6 @@
 language: ruby
 os: osx
-rvm: 2.1.2
+rvm: 2.1.10
  
 install: true
 script: true
