@@ -1,8 +1,6 @@
-language: ruby
-os: osx
-before_install:
- - rvm install 2.1.12
- - rvm use 2.1.12
+language: swift
+osx_image: xcode11.2
+
  
 install: true
 script: true
