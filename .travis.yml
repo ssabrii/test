@@ -1,6 +1,6 @@
-language: swift
+language: ruby
 osx_image: xcode11.2
-
+rvm: 2.6.4
  
 install: true
 script: true
