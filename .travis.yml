@@ -1,4 +1,4 @@
-language: ruby
+language: swift
 osx_image: xcode11.2
 rvm: 2.6.4
  
