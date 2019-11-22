@@ -8,4 +8,4 @@ jobs:
     steps:
     - uses: travis-ci/actions@master
       secrets:
-       TRAVIS_TOKEN: ${{ secrets.TRAVIS_SECRET }}
+       TRAVIS_SECRET: ${{ secrets.TRAVIS_SECRET }}
