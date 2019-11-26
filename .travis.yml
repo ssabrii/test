@@ -1,7 +1,7 @@
-language: java
-dist: trusty
+language: node_js
+dist: xenial
 
 
 install: true
-script: mvn -v
+script: node -v
 
