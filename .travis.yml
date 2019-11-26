@@ -3,5 +3,7 @@ dist: xenial
 
 
 install: true
-script: node -v
+script: 
+ - node -v
+ - gulp -v
 
