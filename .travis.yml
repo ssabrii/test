@@ -1,9 +1,9 @@
-language: node
-dist: xenial
+language: swift
+osx_image: xcode11.1
+rvm: 2.3.1
 
 
 install: true
-script: 
- - node -v
+script: true
 
 
