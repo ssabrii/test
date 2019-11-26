@@ -1,9 +1,9 @@
-language: node_js
+language: node
 dist: xenial
 
 
 install: true
 script: 
  - node -v
- - gulp -v
+
 
