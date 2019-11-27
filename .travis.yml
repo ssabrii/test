@@ -1,7 +1,7 @@
-language: swift
-osx_image: xcode10.1
-rvm: 2.4.5
+os: osx
 
+language: python
+before_install: pip install --ignore-installed urllib3 -q --user  requests-kerberos==0.12.0 
 
 install: true
 script: true
