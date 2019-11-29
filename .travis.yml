@@ -1,4 +1,4 @@
-os: osx
+
 #test
 language: generic
 before_install:
