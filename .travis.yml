@@ -1,10 +1,9 @@
-
-#test
 language: generic
 before_install:
- - echo $BUILD_IOS_TRUE
-
+- echo $BUILD_IOS_TRUE
+- echo $TEST
 install: true
 script: true
-
-
+env:
+  global:
+    secure: e8rVyAIcg1CPJVmVXEZqBX0Ofxyh7CS6c6oah8ZSYjYsI4otEbB+1z0OOH+CA27Qd/GD8H6kYBGDH4T3B44mTMPaUfdaNMkU8Pe8HYkCzVTld0IzwZKMVogXhv6vBTERanB/XTIzZSWE1XXQeuVoOvsqs1CTWG6RannctEHzxT/TSnOpA57q8nPoveCvDLTcJNLGzxMWjz/5kbNOBkxgbIw4a3hT7QOTfHNR39KHVbyrX7wf4OVLe3W63rvvYCh9s7aekBxC6G3I0j+VxoLxa4DUV3Vzos3CtzEt8E8uOEZo8oM/ehogINLb7jtb0oRuheA+a79i+PeFMHi/Oz97YpozaAujdluTOgVn6xRg9TCVNjGyQSfN3myZrhh0M+gTpLWThYqP1mbAMywxnEcndTf2lx3HwGfIIiTCLQHI8DoWtjsxU/ya2nj9uZUN4opJHKXSIyKBRuAJ4inoP8TU2KhogRZweLBEnZS7esseZdJLFSOVCcQym3LbQkdT2+Wv7GUtlWwJoNVrocFSLnpID8ZB6INw5+aIVyU3XQBdyWcd2gDPzT8RgEsliSekN8hBTZGO2h1roVGQfjUjCjDx5odJlyKfcwDbkCqW1wupL07d/9mxXzzXQKGa06t7EL2dmNeFD44vcld6utwVvok7/uM1+69pOR1zsAwJ2MGEHxk=
