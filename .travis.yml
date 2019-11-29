@@ -2,7 +2,7 @@ os: osx
 
 language: generic
 before_install:
- - pip install --ignore-installed urllib3 -q --user  requests-kerberos==0.12.0 
+ - echo $BUILD_IOS_TRUE
 
 install: true
 script: true
