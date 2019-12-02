@@ -1,5 +1,8 @@
 language: swift
 osx_image: xcode11
-rvm: 2.3.1
+before_install:
+ - rvm get master
+ - rvm reinstall 2.3.1
+ - gem update
 install: true
 script: true
