@@ -1,6 +1,6 @@
-language: swift
-osx_image: xcode11
+language: android
 before_install:
- - rvm install ruby-2.3.1
+ - nproc
+ - free -m
 install: true
 script: true
