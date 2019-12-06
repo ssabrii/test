@@ -1,79 +1,9 @@
-# https://docs.travis-ci.com/user/languages/ruby/
+
+
 language: ruby
-#cache: bundler
-install: true
-dist: precise # Temporary fix until we migrate to Ubuntu Trusty, see: https://blog.travis-ci.com/2017-07-11-trusty-as-default-linux-is-coming
-
-
-env_vars:
-  - &env_vars
-    secure: hlWYPPiQ4LSu3tL57yOGDS7IvyG47FX5h9Y5fPPD+GQxYwmg7+NT6hphvPepeqDXdwwzuf0U+etqgtP/Na9wh8E2U2Zq+opPpPnPGuFFXwmnkBpI9+nrCn5MiKwBq8mklVb6Uwby2M88e3lvknF+4qLsFiypd5pXNPW8DgsaEYg=
-
+dist: xenial
+install: echo $CONTENT
+before_install:
+ - EXPORT CONTENT="$(cat test.txt)"
 script: true
 
-
-jobs:
-  fast_finish: true
-  allow_failures:
-    - env:
-      - "TEST_GROUP=7"
-      - "RAILS_NEXT=1"
-      - "BUILD_IOS_TRUE=$BUILD_IOS_TRUE"
-  include:
-    - env:
-      - "TEST_GROUP=1"
-      - *env_vars
-    - env:
-      - "TEST_GROUP=2"
-      - *env_vars
-    - env:
-      - "TEST_GROUP=3"
-      - *env_vars
-    - env:
-      - "TEST_GROUP=4"
-      - *env_vars
-    - env:
-      - "TEST_GROUP=5"
-      - *env_vars
-    - env:
-      - "TEST_GROUP=6"
-      - *env_vars
-    - env:
-      - "TEST_GROUP=7"
-      - *env_vars
-    - env:
-      - "TEST_GROUP=8"
-      - *env_vars
-    - env:
-      - "TEST_GROUP=1"
-      - "RAILS_NEXT=1"
-      - *env_vars
-    - env:
-      - "TEST_GROUP=2"
-      - "RAILS_NEXT=1"
-      - *env_vars
-    - env:
-      - "TEST_GROUP=3"
-      - "RAILS_NEXT=1"
-      - *env_vars
-    - env:
-      - "TEST_GROUP=4"
-      - "RAILS_NEXT=1"
-      - *env_vars
-    - env:
-      - "TEST_GROUP=5"
-      - "RAILS_NEXT=1"
-      - *env_vars
-    - env:
-      - "TEST_GROUP=6"
-      - "RAILS_NEXT=1"
-      - *env_vars
-    - env:
-      - "TEST_GROUP=7"
-      - "RAILS_NEXT=1"
-      - "BUILD_IOS_TRUE=$BUILD_IOS_TRUE"
-      script: false
-    - env:
-      - "TEST_GROUP=8"
-      - "RAILS_NEXT=1"
-      - *env_vars
