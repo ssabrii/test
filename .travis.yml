@@ -10,16 +10,9 @@ env_vars:
     secure: hlWYPPiQ4LSu3tL57yOGDS7IvyG47FX5h9Y5fPPD+GQxYwmg7+NT6hphvPepeqDXdwwzuf0U+etqgtP/Na9wh8E2U2Zq+opPpPnPGuFFXwmnkBpI9+nrCn5MiKwBq8mklVb6Uwby2M88e3lvknF+4qLsFiypd5pXNPW8DgsaEYg=
 
 script: true
-  
-stages:
-  - name: test
-    if: type != cron
-  - name: coverage
-    if: type = cron
-  - name: download merge and upload coverage
-    if: type = cron
 
-matrix:
+
+jobs:
   fast_finish: true
   allow_failures:
     - env: RAILS_NEXT=1
@@ -45,7 +38,6 @@ matrix:
     - env:
       - "TEST_GROUP=7"
       - *env_vars
-      <<: *_test_script
     - env:
       - "TEST_GROUP=8"
       - *env_vars
