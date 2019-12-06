@@ -3,6 +3,7 @@ osx_image: xcode11.2
 before_install: pip install flake8
 install: true
 script: true
+after_script: sleep 20
 notifications:
   slack:
    rooms:
