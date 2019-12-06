@@ -16,7 +16,7 @@ jobs:
   fast_finish: true
   allow_failures:
     - env: 
-      - RAILS_NEXT=1
+      - "RAILS_NEXT=1"
   include:
     - env:
       - "TEST_GROUP=1"
