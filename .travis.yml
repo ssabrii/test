@@ -1,19 +1,83 @@
-addons: 
-  apt: 
-    packages: 
-      - postgresql-12
-      - postgresql-client-12
-  postgresql: 12
-  
-before_install:
-  - sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/12/main/postgresql.conf
-  - sudo cp /etc/postgresql/{9.6,12}/main/pg_hba.conf
-  - sudo service postgresql stop
-  - sudo service postgresql start 12
-  
-before_script: 
-  - "psql -c 'create database travis_ci_test;' -U postgres"
+# https://docs.travis-ci.com/user/languages/ruby/
+language: ruby
+#cache: bundler
 install: true
+dist: precise # Temporary fix until we migrate to Ubuntu Trusty, see: https://blog.travis-ci.com/2017-07-11-trusty-as-default-linux-is-coming
+
+
+env_vars:
+  - &env_vars
+    secure: hlWYPPiQ4LSu3tL57yOGDS7IvyG47FX5h9Y5fPPD+GQxYwmg7+NT6hphvPepeqDXdwwzuf0U+etqgtP/Na9wh8E2U2Zq+opPpPnPGuFFXwmnkBpI9+nrCn5MiKwBq8mklVb6Uwby2M88e3lvknF+4qLsFiypd5pXNPW8DgsaEYg=
+
 script: true
-services: 
-  - postgresql
+  
+stages:
+  - name: test
+    if: type != cron
+  - name: coverage
+    if: type = cron
+  - name: download merge and upload coverage
+    if: type = cron
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - env: RAILS_NEXT=1
+  include:
+    - env:
+      - "TEST_GROUP=1"
+      - *env_vars
+    - env:
+      - "TEST_GROUP=2"
+      - *env_vars
+    - env:
+      - "TEST_GROUP=3"
+      - *env_vars
+    - env:
+      - "TEST_GROUP=4"
+      - *env_vars
+    - env:
+      - "TEST_GROUP=5"
+      - *env_vars
+    - env:
+      - "TEST_GROUP=6"
+      - *env_vars
+    - env:
+      - "TEST_GROUP=7"
+      - *env_vars
+      <<: *_test_script
+    - env:
+      - "TEST_GROUP=8"
+      - *env_vars
+    - env:
+      - "TEST_GROUP=1"
+      - "RAILS_NEXT=1"
+      - *env_vars
+    - env:
+      - "TEST_GROUP=2"
+      - "RAILS_NEXT=1"
+      - *env_vars
+    - env:
+      - "TEST_GROUP=3"
+      - "RAILS_NEXT=1"
+      - *env_vars
+    - env:
+      - "TEST_GROUP=4"
+      - "RAILS_NEXT=1"
+      - *env_vars
+    - env:
+      - "TEST_GROUP=5"
+      - "RAILS_NEXT=1"
+      - *env_vars
+    - env:
+      - "TEST_GROUP=6"
+      - "RAILS_NEXT=1"
+      - *env_vars
+    - env:
+      - "TEST_GROUP=7"
+      - "RAILS_NEXT=1"
+      - *env_vars
+    - env:
+      - "TEST_GROUP=8"
+      - "RAILS_NEXT=1"
+      - *env_vars
