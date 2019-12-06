@@ -1,9 +1,10 @@
-
-
 language: ruby
 dist: xenial
 install: echo $CONTENT
 before_install:
- - export CONTENT="$(cat test.txt)"
+- export CONTENT="$(cat test.txt)"
 script: true
-
+notifications:
+  slack:
+    rooms:
+      secure: TU2CFLS82Mk+VAdb7AEoTec05rVsAkfTcDy///9WN8EbVwjVZ2Nf0s6X94e/FHMGaNccXHb2z/FB43Fcedk3zBo8FpqQEblzviWrDYJmxrD9z5MqSZhbxKeN9Bl68L0Plt4NegBV9xbJKtmF8OhqhSPdTbU7VvgpCMl/QE+b21AVcfSaTvFiVwGoKuqY1VE+SdX5/31DIedJLsfmpJker2GXBxHxy9enuMvdDmUlAYZpG9eYYrZuJJ4p7sriS0tnRTtWvcs4msgEEOEIcTNykfxkKRnWN0mYMzJ5P6OozV9Gy7/80niqvCXR8QsTP9mosJdvX3hXVI4EX0vFzAejT7jxJP6Ac5sg7U/3itFMLHN/g56XSjMavEEhBnloXxheAZ7UMVUlT5Fnw7j7sWmIxBwTQmub2U48FIfZPuGrTQL6gh0SxAq/rOWfsPQD4DIrBrta3dt8azepmpEt60+M9yru/v1toWDL1okRDujierGKFaTW60j2MpoVB88VCUYBc1HMtyw+svLjtgOdi1jj2ZB3zMD5XHx5NZ+g7S/Fh2JPRuXn9OjImBGal/LBUr8aVI71pN7QTfm60vGYEq1aOKoPWSLKSsiW3enNMr+hFeWbmIhLYS/cPuAfgEKjA6+UvsFfU9ZD6UxlPHDLU9qjIIRVekN/jWj74Ez4c+q7oFE=
