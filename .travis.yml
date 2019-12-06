@@ -1,11 +1,7 @@
-language: ruby
-dist: xenial
-env:
-  global:
-   - CONTENT="$(cat test.txt)"
-   
-install: echo $CONTENT
-
+language: swift
+osx_image: xcode11.2
+before_install: pip install flake8
+install: true
 script: true
 notifications:
   slack:
