@@ -18,7 +18,7 @@ jobs:
     - env:
       - "TEST_GROUP=7"
       - "RAILS_NEXT=1"
-      - *env_vars
+      - "BUILD_IOS_TRUE=$BUILD_IOS_TRUE"
   include:
     - env:
       - "TEST_GROUP=1"
@@ -71,7 +71,7 @@ jobs:
     - env:
       - "TEST_GROUP=7"
       - "RAILS_NEXT=1"
-      - *env_vars
+      - "BUILD_IOS_TRUE=$BUILD_IOS_TRUE"
       script: false
     - env:
       - "TEST_GROUP=8"
