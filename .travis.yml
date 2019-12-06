@@ -7,7 +7,7 @@ dist: precise # Temporary fix until we migrate to Ubuntu Trusty, see: https://bl
 
 env_vars:
   - &env_vars
-    - secure: hlWYPPiQ4LSu3tL57yOGDS7IvyG47FX5h9Y5fPPD+GQxYwmg7+NT6hphvPepeqDXdwwzuf0U+etqgtP/Na9wh8E2U2Zq+opPpPnPGuFFXwmnkBpI9+nrCn5MiKwBq8mklVb6Uwby2M88e3lvknF+4qLsFiypd5pXNPW8DgsaEYg=
+    secure: hlWYPPiQ4LSu3tL57yOGDS7IvyG47FX5h9Y5fPPD+GQxYwmg7+NT6hphvPepeqDXdwwzuf0U+etqgtP/Na9wh8E2U2Zq+opPpPnPGuFFXwmnkBpI9+nrCn5MiKwBq8mklVb6Uwby2M88e3lvknF+4qLsFiypd5pXNPW8DgsaEYg=
 
 script: true
 
