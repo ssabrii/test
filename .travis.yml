@@ -8,4 +8,4 @@ notifications:
   slack:
    secure: QZXwcUP/cpjuphUPHZUl8e6OV0FhIJ7cy7q+mecfPtLfmckXK/6l+gONyk8mghZb7VHAEga4if4bi3xWc4lrqRF2QV9QC6GSG58lvTghj78UQLfxjsnmPPJwHX0ZP/RcvFL1sHmtg1MbyynaInnJE6kNhkPCXpd9yNzH7b78uqWhXy/GVUUpwFkcjJAXXPWrf4usmSYCfrPKRyK6EdWmgbg29YW4tveaI7ZLb65SeWFuCvTX/iWJGICFpRdR7ipQhSSkx/mEz8MYwlwV7wZ5H+hfZS/f7IkhXCvond/hCh5nxSK4rlzfrZo4vMEWKp8l5E98EKPxiuQxr/bMlGVLbgn53cS84HwzGWxnjJnMce+W6rYbJGZXRqFaMZS3saCOGgtuv1mRSIUsUmjTudDtB8o/Z9UqexoVTqlRiAEe62VKxP/mdW7Ai9seflN95Iu+sOgiAnXR6acML35MNCKg3WdLWaXNPspOMkITPFoGpXCdCKR4MnBg3chX5uhU6Tfo7MMdZoH1Bcs+IoP+W53e2l/2tf7tDXihu8NF0Mtel7kC+tGDcp9lmJ0IcmFQkDXTHwisYds0Dusg3RaiCHEsHNCpAOAQJSH+BmAXrXDAX0/Pns3YOudD3BcUc4uhWRAyTdJGzW9tPKYfxLyZWdYdQErc3KV65GsMeexZAMQstz8=
    template:
-    - "Build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository_slug}@%{branch} by %{author} %{result} in %{duration} okkkk"    
+     - "Build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository_slug}@%{branch} by %{author} %{result} in %{duration} okkkk"    
