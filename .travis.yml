@@ -1,4 +1,4 @@
-language: swift
+language: python
 osx_image: xcode11.2
 before_install: pip install flake8
 install: true
