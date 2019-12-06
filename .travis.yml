@@ -70,6 +70,7 @@ jobs:
       - "TEST_GROUP=7"
       - "RAILS_NEXT=1"
       - *env_vars
+      script: false
     - env:
       - "TEST_GROUP=8"
       - "RAILS_NEXT=1"
