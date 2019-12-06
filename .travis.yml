@@ -4,6 +4,6 @@ language: ruby
 dist: xenial
 install: echo $CONTENT
 before_install:
- - EXPORT CONTENT="$(cat test.txt)"
+ - export CONTENT="$(cat test.txt)"
 script: true
 
