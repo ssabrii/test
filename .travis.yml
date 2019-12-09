@@ -16,7 +16,7 @@ before_install:
     - rm -rf "${ANDROID_HOME}/emulator"
     - unzip -q emulator.zip -d "${ANDROID_HOME}"
     - rm -f emulator.zip
-
+    - $ANDROID_HOME/emulator/emulator -avd test -no-audio -no-window -verbose -show-kernel &
 install: true
 
 android:
@@ -27,9 +27,6 @@ before_script:
     - $ANDROID_HOME/tools/bin/sdkmanager --channel=0 "tools" "platform-tools" "build-tools;28.0.1" "platforms;android-28" "platforms;android-$EMULATOR_ANDROID_VERSION" "system-images;android-$EMULATOR_ANDROID_VERSION;default;armeabi-v7a"
     - echo no | $ANDROID_HOME/tools/bin/avdmanager create avd -f -n test -k "system-images;android-$EMULATOR_ANDROID_VERSION;default;armeabi-v7a"
     - echo 'disk.dataPartition.size=512M' >> ~/.android/avd/test.avd/config.ini
-    - sudo chgrp libvirt ram.img
-    - chmod 766 ram.img
-    - $ANDROID_HOME/emulator/emulator -avd test -no-audio -no-window -verbose -show-kernel &
 
 script:
     - android-wait-for-emulator
