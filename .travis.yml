@@ -3,7 +3,9 @@ language: swift
 before_install:
  - pip3 install --upgrade pip
 
-install: pip install flake8
+install:
+ - which pip
+ - pip install flake8
 script: true
 
 notifications:
