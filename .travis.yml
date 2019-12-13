@@ -1,7 +1,4 @@
-osx_image: xcode11.2
-os: osx
-before_install:
- - python -v
+language: python
 
 install: true
 script: true
