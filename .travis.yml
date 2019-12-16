@@ -1,7 +1,7 @@
 language: python
 
 install: true
-#test
+
 script: 
  - echo $DATABASE_TEST_URL
  - echo $TEST_URL
