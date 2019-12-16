@@ -1,7 +1,7 @@
 language: python
 
 install: true
-script: true
+script: echo $DATABASE_TEST_URL
 
 notifications:
   slack:
