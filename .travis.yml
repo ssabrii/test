@@ -1,7 +1,7 @@
 language: ruby
 
 dist: bionic
-before_install: nvm use 10.16.0
+before_install: node -v
 install: true
 script: true
 
