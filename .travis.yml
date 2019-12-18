@@ -1,10 +1,9 @@
-language: python
+language: ruby
 
+dist: bionic
+before_install: nvm use 10.16.0
 install: true
-
-script: 
- - echo $DATABASE_TEST_URL
- - echo $TEST_URL
+script: true
 
 notifications:
   slack:
