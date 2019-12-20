@@ -24,7 +24,9 @@ install: true
 before_script:
   - psql -c 'create database travis_ci_test' -U postgres
 
-script: psql -V
+script: 
+  - sudo netstat -plunt |grep postgres
+  - psql -V
 
 notifications:
   slack:
