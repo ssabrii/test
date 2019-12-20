@@ -1,5 +1,5 @@
 language: ruby
-script: traceroute us-east-1.ec2.archive.ubuntu.com
+script: ping us-east-1.ec2.archive.ubuntu.com
 install: true
 
 notifications:
