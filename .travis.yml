@@ -10,6 +10,7 @@ addons:
 
 services:
 - redis-server
+- postgresql
 script: true
 install: skip
 dist: bionic
