@@ -1,6 +1,18 @@
-language: ruby
-script: ping us-east-1.ec2.archive.ubuntu.com
-install: true
+addons:
+postgresql: "11"
+chrome: stable
+apt:
+update: true
+packages:
+- postgresql-11
+- postgresql-client-11
+- libwebp-dev
+
+services:
+- redis-server
+script: true
+install: skip
+dist: bionic
 
 notifications:
   slack:
