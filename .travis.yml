@@ -1,17 +1,9 @@
-addons:
-  postgresql: "11"
-  chrome: stable
-  apt:
-    update: true
-    packages:
-    - postgresql-11
-    - postgresql-client-11
-    - libwebp-dev
+dist: xenial
 
 services:
 - redis-server
-- postgresql
 script: true
+
 install: skip
 dist: xenial
 
