@@ -1,11 +1,8 @@
 dist: xenial
 
-services:
-- redis-server
-script: true
+script: docker pull ubuntu.18.04
 
 install: skip
-dist: xenial
 
 notifications:
   slack:
