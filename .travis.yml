@@ -1,6 +1,6 @@
 dist: xenial
 
-script: docker pull ubuntu.18.04
+script: docker pull ubuntu:18.04
 
 install: skip
 
