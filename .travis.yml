@@ -1,4 +1,4 @@
-dist: xenial
+dist: trusty
 
 script: docker pull ubuntu:18.04
 #test
