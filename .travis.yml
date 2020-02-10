@@ -1,8 +1,8 @@
 dist: xenial
-
-script: docker pull ubuntu:18.04
-#test
-install: skip
+arch: s390x
+language: php
+script:
+- phpenv config-rm xdebug.ini
 
 notifications:
   slack:
